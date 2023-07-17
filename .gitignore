@@ -22,3 +22,6 @@ Thumbs.db
 # backup files #
 ################
 *.bak
+input-cache/txcache/ucum.cache
+*.cache
+input-cache/txcache/ucum.cache
