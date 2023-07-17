@@ -4,8 +4,9 @@
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 id: international-birth-and-child-model
-canonical: https://fhir.org/fhir/ImplementationGuide/international-birth-and-child-model
+canonical: https://fhir.org/fhir
 name: InternationalBirthAndChildModel
+title: International Birth And Child Model Implementation Guide
 # title: Example Title
 # description: Example Implementation Guide for getting started with SUSHI
 status: draft # draft | active | retired | unknown
