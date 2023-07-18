@@ -15,13 +15,14 @@ Usage: #example
 
 
 Instance: us1-fetus
-InstanceOf: Patient
+InstanceOf: IBCMFetalPatient
 Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
 * extension.valueCode = #unborn
-* identifier.system = "http://hl7.org/fhir/identifiers/fetus"
-* identifier.value = "A"
+* identifier[identifierFetal].type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
+* identifier[identifierFetal].system = "http://hl7.org/fhir/identifiers/fetus"
+* identifier[identifierFetal].value = "A"
 * gender = #female
 
 
@@ -37,7 +38,7 @@ Instance: us1-pregnancy
 InstanceOf: Condition
 Description: "An example of a pregnancy Condition"
 Usage: #example
-* clinicalStatus = #active
+* clinicalStatus = $condition-clinical-code#active
 * code = http://snomed.info/sct#364320009 "Pregnancy observable (observable entity)"
 * subject = Reference(us1-mother)
 
@@ -86,9 +87,10 @@ Instance: us1-399216004
 InstanceOf: Condition
 Description: "An example of a fetus disorder Condition"
 Usage: #example
-* clinicalStatus = #active
-* category = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
-* code = http://snomed.info/sct#399216004 "D-transposition of the great vessels"
+* clinicalStatus = $condition-clinical-code#active
+* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[+] = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
+* code = http://snomed.info/sct#399216004 "D - transposition of the great vessels"
 * subject = Reference(us1-fetus)
 * evidence.reference = Reference(us1-ultrasoundreport)
 

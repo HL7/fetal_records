@@ -16,7 +16,7 @@ Usage: #example
 * link[1].type = #seealso
 
 Instance: us2-fetusA
-InstanceOf: Patient
+InstanceOf: IBCMFetalPatient
 Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
@@ -34,7 +34,7 @@ Usage: #example
 
 
 Instance: us2-fetusB
-InstanceOf: Patient
+InstanceOf: IBCMFetalPatient
 Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
@@ -55,7 +55,7 @@ Instance: us2-pregnancy
 InstanceOf: Condition
 Description: "An example of a pregnancy Condition"
 Usage: #example
-* clinicalStatus = #active
+* clinicalStatus = $condition-clinical-code#active
 * code = http://snomed.info/sct#364320009 "Pregnancy observable (observable entity)"
 * subject = Reference(us2-mother)
 
@@ -64,7 +64,7 @@ Instance: us2-17190001
 InstanceOf: Condition
 Description: "An example of a fetus disorder (Congenital diaphragmatic hernia) Condition"
 Usage: #example
-* clinicalStatus = #active
+* clinicalStatus = $condition-clinical-code#active
 * category = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code = http://snomed.info/sct#17190001 "Congenital diaphragmatic hernia (disorder)"
 * bodySite.extension.url = "http://hl7.org/fhir/StructureDefinition/bodysite-laterality"
@@ -76,7 +76,7 @@ Instance: us2-416010008
 InstanceOf: Condition
 Description: "An example of a fetus disorder (Hypospadias) Condition"
 Usage: #example
-* clinicalStatus = #active
+* clinicalStatus = $condition-clinical-code#active
 * category = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code = http://snomed.info/sct#416010008 "Hypospadias (disorder)"
 * subject = Reference(Patient/us2-fetusB)
