@@ -20,9 +20,9 @@ Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
 * extension.valueCode = #unborn
-* identifier[identifierFetal].type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
-* identifier[identifierFetal].system = "http://hl7.org/fhir/identifiers/fetus"
-* identifier[identifierFetal].value = "A"
+* identifier.type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
+* identifier.system = "http://hl7.org/fhir/identifiers/fetus"
+* identifier.value = "A"
 * gender = #female
 
 
