@@ -49,8 +49,8 @@ Usage: #example
 * subject = Reference(cfsb1678031552105)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(cfsb1678032682677)
-* identifier.system = "http://loinc.org"
-* code = http://loinc.org#2106-3
+* identifier.system = "$loinc"
+* code = $loinc#2106-3
 * code.text = "Pregnancy test, qualitative"
 * valueString = "Positive"
 
@@ -63,7 +63,7 @@ Usage: #example
 * status = #final
 // Reference to Patient: Mother
 * subject = Reference(cfsb1678031552105)
-* code = http://loinc.org#3141-9
+* code = $loinc#3141-9
 * code.text = "Body weight Measured"
  // Reference to Encounter: MOH Visit
 * encounter = Reference(cfsb1678032682677)
@@ -79,7 +79,7 @@ Usage: #example
 * subject = Reference(cfsb1678031552105)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(cfsb1678032682677)
-* code = http://loinc.org#3137-7
+* code = $loinc#3137-7
 * code.text = "Body height Measured"
 
 
@@ -93,7 +93,7 @@ Usage: #example
 * subject = Reference(cfsb1678031552105)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(cfsb1678032682677)
-* code = http://loinc.org#718-7
+* code = $loinc#718-7
 * code.text = "Hemoglobin [Mass/volume] in Blood"
 
 
@@ -108,7 +108,7 @@ Usage: #example
  // Reference to Encounter: MOH Visit
 * encounter = Reference(cfsb1678032682677)
 
-* code = http://loinc.org#5809-9
+* code = $loinc#5809-9
 * code.text = "Reducing substances [Presence] in Urine"
 
 
@@ -138,7 +138,7 @@ Usage: #example
  // Reference to Encounter: MOH Visit Follow Up
 * encounter = Reference(cfsb1678033657903)
 
-* code = http://loinc.org#11881-0
+* code = $loinc#11881-0
 * code.text = "Uterus Fundal height Tape measure"
 
 
@@ -152,7 +152,7 @@ Usage: #example
 * subject = Reference(cfsb1678031552105)
  // Reference to Encounter: MOH Visit Follow Up
 * encounter = Reference(cfsb1678033657903)
-* code = http://loinc.org#3141-9
+* code = $loinc#3141-9
 * code.text = "Body weight Measured"
 
 
@@ -183,13 +183,13 @@ Usage: #example
 // Reference to Patient: Mother
 * subject = Reference(cfsb1678031552105)
 * status = #completed
-* code = http://snomed.info/sct#387713003
+* code =  $sct#387713003
 * code.text = "Cesarean section"
  // Reference to Encounter: Admission
 * encounter = Reference(cfsb1678034144351)
  // Reference to Location: Kandy Hospital
 * location = Reference(cfsb1678034462190)
-* reason.concept.coding.code = http://snomed.info/sct#118997002
+* reason.concept.coding.code =  $sct#118997002
 * reason.concept.text = "Pregnancy with antenatal problem"
 
 
@@ -220,7 +220,7 @@ Usage: #example
 * status = #final
  // Reference to Patient: Fetus
 * subject = Reference(cfsb1678034617442)
-* code = http://loinc.org#LP6702-7
+* code = $loinc#LP6702-7
 * code.text = "Ultrasound Estimated from FL"
 * valueQuantity.value = 40
 * valueQuantity.unit = "mm"
@@ -238,7 +238,7 @@ Usage: #example
 * subject = Reference(cfsb1678034617442)
  // Reference to Encounter: Obs Clinic
 * encounter = Reference(cfsb1678035177721)
-* code = http://loinc.org#LP6713-4
+* code = $loinc#LP6713-4
 * code.text = "Ultrasound Estimated from HC"
 * valueQuantity.value = 318
 * valueQuantity.unit = "mm"
@@ -253,4 +253,4 @@ Usage: #example
 * patient = Reference(cfsb1678034617442)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
 * status = #partial
-* condition.code = http://snomed.info/sct#86268005 "Achondroplasia"
+* condition.code =  $sct#86268005 "Achondroplasia"

@@ -56,7 +56,7 @@ InstanceOf: Condition
 Description: "An example of a pregnancy Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
-* code = http://snomed.info/sct#364320009 "Pregnancy observable (observable entity)"
+* code =  $sct#364320009 "Pregnancy observable (observable entity)"
 * subject = Reference(us2-mother)
 
 
@@ -65,11 +65,11 @@ InstanceOf: Condition
 Description: "An example of a fetus disorder (Congenital diaphragmatic hernia) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
-* category = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
-* code = http://snomed.info/sct#17190001 "Congenital diaphragmatic hernia (disorder)"
+* category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* code =  $sct#17190001 "Congenital diaphragmatic hernia (disorder)"
 * bodySite.extension.url = "http://hl7.org/fhir/StructureDefinition/bodysite-laterality"
-* bodySite.extension.valueCodeableConcept = http://snomed.info/sct#7771000 "Left"
-* bodySite = http://snomed.info/sct#5798000 "Diaphragm"
+* bodySite.extension.valueCodeableConcept =  $sct#7771000 "Left"
+* bodySite =  $sct#5798000 "Diaphragm"
 * subject = Reference(Patient/us2-fetusA)
 
 Instance: us2-416010008
@@ -77,8 +77,8 @@ InstanceOf: Condition
 Description: "An example of a fetus disorder (Hypospadias) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
-* category = http://snomed.info/sct#414025005 "Disorder of fetus or newborn (disorder)"
-* code = http://snomed.info/sct#416010008 "Hypospadias (disorder)"
+* category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* code =  $sct#416010008 "Hypospadias (disorder)"
 * subject = Reference(Patient/us2-fetusB)
 
 Instance: us2-lhr
@@ -86,8 +86,8 @@ InstanceOf: Observation
 Description: "An example of a fetus Lung-Head Ratio Observation"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#LHR "Lung-Head Ratio"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#LHR "Lung-Head Ratio"
 * subject = Reference(us2-fetusA)
 * valueQuantity = 0.67 '%' "%"
 
@@ -97,10 +97,10 @@ InstanceOf: Observation
 Description: "An example of a Karyotype Observation"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#734840008 "Karyotype (cell structure)"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#734840008 "Karyotype (cell structure)"
 * subject = Reference(us2-fetusA)
-* valueCodeableConcept = http://snomed.info/sct#734871004 "Karyotype evaluation normal (finding)"
+* valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
 
 
 Instance: us2-karyotype-fetusB
@@ -108,10 +108,10 @@ InstanceOf: Observation
 Description: "An example of a Karyotype Observation"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#734840008 "Karyotype (cell structure)"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#734840008 "Karyotype (cell structure)"
 * subject = Reference(us2-fetusB)
-* valueCodeableConcept = http://snomed.info/sct#734871004 "Karyotype evaluation normal (finding)"
+* valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
 
 
 Instance: us2-gestation20
@@ -119,8 +119,8 @@ InstanceOf: Observation
 Description: "An example of a fetal gestational age Observation (20 weeks)"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#57036006 "Fetal gestational age (observable entity)"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#57036006 "Fetal gestational age (observable entity)"
 * subject = Reference(us2-mother)
 * focus = Reference(us2-pregnancy)
 * valueQuantity = 20 'wk' "wk"
@@ -131,8 +131,8 @@ InstanceOf: Observation
 Description: "An example of a fetal gestational age Observation (24.14 weeks)"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#57036006 "Fetal gestational age (observable entity)"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#57036006 "Fetal gestational age (observable entity)"
 * subject = Reference(us2-mother)
 * focus = Reference(us2-pregnancy)
 * valueQuantity = 24.14 'wk' "wk"
@@ -143,11 +143,11 @@ InstanceOf: Observation
 Description: "An example of an observed:expected lung volume Observation"
 Usage: #example
 * status = #final
-* category = http://hl7.org/fhir/observation-category#vital-signs "Vital Signs"
-* code = http://snomed.info/sct#xxx "Observed:expected lung volume"
+* category = $observation-category#vital-signs "Vital Signs"
+* code =  $sct#xxx "Observed:expected lung volume"
 * subject = Reference(us2-fetusA)
 * valueQuantity = 0.21 '%' "%"
-* method = http://snomed.info/sct#113091000 "Magnetic resonance imaging (procedure)"
+* method =  $sct#113091000 "Magnetic resonance imaging (procedure)"
 
 
 Instance: us2-ultrasoundreport24
@@ -155,7 +155,7 @@ InstanceOf: DiagnosticReport
 Description: "An example of an ultrasound scan DiagnosticReport (24 weeks)"
 Usage: #example
 * status = #final
-* code = http://snomed.info/sct#241493005 "Ultrasound scan for fetal growth (procedure)"
+* code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(us2-mother)
 * result[0] = Reference(us2-lhr)
 * result[+] = Reference(us2-lungvolume)
@@ -166,7 +166,7 @@ InstanceOf: DiagnosticReport
 Description: "An example of an ultrasound scan DiagnosticReport (20 weeks)"
 Usage: #example
 * status = #final
-* code = http://snomed.info/sct#241493005 "Ultrasound scan for fetal growth (procedure)"
+* code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(us2-mother)
 
 
@@ -175,7 +175,7 @@ InstanceOf: DiagnosticReport
 Description: "An example of an amniocentesis DiagnosticReport"
 Usage: #example
 * status = #final
-* code = http://snomed.info/sct#241493005 "Ultrasound scan for fetal growth (procedure)"
+* code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(us2-mother)
 * result[0] = Reference(us2-karyotype-fetusA)
 * result[+] = Reference(us2-karyotype-fetusB)
@@ -188,7 +188,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
 * extension.valueReference = Reference(us2-gestation20)
 * status = #completed
-* code = http://snomed.info/sct#241493005 "Ultrasound scan for fetal growth (procedure)"
+* code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(us2-mother)
 * report = Reference(us2-ultrasoundreport20)
 
@@ -200,7 +200,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
 * extension.valueReference = Reference(us2-gestation24)
 * status = #completed
-* code = http://snomed.info/sct#241493005 "Ultrasound scan for fetal growth (procedure)"
+* code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(us2-mother)
 * report = Reference(us2-ultrasoundreport24)
 
@@ -210,7 +210,7 @@ InstanceOf: Procedure
 Description: "An example of an amniocentesis Procedure"
 Usage: #example
 * status = #completed
-* code = http://snomed.info/sct#34536000 "Amniocentesis (procedure)"
+* code =  $sct#34536000 "Amniocentesis (procedure)"
 * subject = Reference(us2-mother)
 * report = Reference(us2-amniocentesisreport)
 
