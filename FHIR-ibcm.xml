@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ciUrl="" defaultVersion="current" defaultWorkgroup="pc" url="https://fhir.org/fhir/uv/ibcm">
+<version code="current" url=""/>
+<version code="0.1.0" url="https://fhir.org/fhir/ibcm/2023Sep"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/ibcm-fetal-record" key="StructureDefinition-ibcm-fetal-record" name="IBCM Fetal Record Profile"/>
+<artifact id="StructureDefinition/fetal-record-identifier" key="StructureDefinition-fetal-record-identifier" name="IBCM Fetus Identifier profile"/>
+<artifact id="Patient/cfsb1678031552105" key="Patient-cfsb1678031552105" name="cfsb1678031552105"/>
+<artifact id="Encounter/cfsb1678032682677" key="Encounter-cfsb1678032682677" name="cfsb1678032682677"/>
+<artifact id="Location/cfsb1678032872351" key="Location-cfsb1678032872351" name="cfsb1678032872351"/>
+<artifact id="Observation/cfsb1678032962708" key="Observation-cfsb1678032962708" name="cfsb1678032962708"/>
+<artifact id="Observation/cfsb1678033209571" key="Observation-cfsb1678033209571" name="cfsb1678033209571"/>
+<artifact id="Observation/cfsb1678033304138" key="Observation-cfsb1678033304138" name="cfsb1678033304138"/>
+<artifact id="Observation/cfsb1678033379360" key="Observation-cfsb1678033379360" name="cfsb1678033379360"/>
+<artifact id="Observation/cfsb1678033472437" key="Observation-cfsb1678033472437" name="cfsb1678033472437"/>
+<artifact id="Encounter/cfsb1678033657903" key="Encounter-cfsb1678033657903" name="cfsb1678033657903"/>
+<artifact id="Observation/cfsb1678033768865" key="Observation-cfsb1678033768865" name="cfsb1678033768865"/>
+<artifact id="Observation/cfsb1678033874792" key="Observation-cfsb1678033874792" name="cfsb1678033874792"/>
+<artifact id="Encounter/cfsb1678034144351" key="Encounter-cfsb1678034144351" name="cfsb1678034144351"/>
+<artifact id="Location/cfsb1678034462190" key="Location-cfsb1678034462190" name="cfsb1678034462190"/>
+<artifact id="Procedure/cfsb1678034484567" key="Procedure-cfsb1678034484567" name="cfsb1678034484567"/>
+<artifact id="Patient/cfsb1678034617442" key="Patient-cfsb1678034617442" name="cfsb1678034617442"/>
+<artifact id="Encounter/cfsb1678035177721" key="Encounter-cfsb1678035177721" name="cfsb1678035177721"/>
+<artifact id="Observation/cfsb1678035296785" key="Observation-cfsb1678035296785" name="cfsb1678035296785"/>
+<artifact id="Observation/cfsb1678035441094" key="Observation-cfsb1678035441094" name="cfsb1678035441094"/>
+<artifact id="FamilyMemberHistory/cfsb1678036069583" key="FamilyMemberHistory-cfsb1678036069583" name="cfsb1678036069583"/>
+<artifact id="Condition/us1-399216004" key="Condition-us1-399216004" name="us1-399216004"/>
+<artifact id="Observation/us1-estimatedfetalbodyweight" key="Observation-us1-estimatedfetalbodyweight" name="us1-estimatedfetalbodyweight"/>
+<artifact id="Patient/us1-fetus" key="Patient-us1-fetus" name="us1-fetus"/>
+<artifact id="Observation/us1-gestation21" key="Observation-us1-gestation21" name="us1-gestation21"/>
+<artifact id="Observation/us1-gestation37" key="Observation-us1-gestation37" name="us1-gestation37"/>
+<artifact id="MedicationRequest/us1-medicationrequest" key="MedicationRequest-us1-medicationrequest" name="us1-medicationrequest"/>
+<artifact id="Patient/us1-mother" key="Patient-us1-mother" name="us1-mother"/>
+<artifact id="RelatedPerson/us1-mother-relatedperson" key="RelatedPerson-us1-mother-relatedperson" name="us1-mother-relatedperson"/>
+<artifact id="Condition/us1-pregnancy" key="Condition-us1-pregnancy" name="us1-pregnancy"/>
+<artifact id="DiagnosticReport/us1-ultrasoundreport" key="DiagnosticReport-us1-ultrasoundreport" name="us1-ultrasoundreport"/>
+<artifact id="Procedure/us1-ultrasoundscan" key="Procedure-us1-ultrasoundscan" name="us1-ultrasoundscan"/>
+<artifact id="Condition/us2-17190001" key="Condition-us2-17190001" name="us2-17190001"/>
+<artifact id="Condition/us2-416010008" key="Condition-us2-416010008" name="us2-416010008"/>
+<artifact id="Procedure/us2-amniocentesis" key="Procedure-us2-amniocentesis" name="us2-amniocentesis"/>
+<artifact id="DiagnosticReport/us2-amniocentesisreport" key="DiagnosticReport-us2-amniocentesisreport" name="us2-amniocentesisreport"/>
+<artifact id="Patient/us2-fetusA" key="Patient-us2-fetusA" name="us2-fetusA"/>
+<artifact id="Patient/us2-fetusB" key="Patient-us2-fetusB" name="us2-fetusB"/>
+<artifact id="Observation/us2-gestation20" key="Observation-us2-gestation20" name="us2-gestation20"/>
+<artifact id="Observation/us2-gestation24" key="Observation-us2-gestation24" name="us2-gestation24"/>
+<artifact id="Observation/us2-karyotype-fetusA" key="Observation-us2-karyotype-fetusA" name="us2-karyotype-fetusA"/>
+<artifact id="Observation/us2-karyotype-fetusB" key="Observation-us2-karyotype-fetusB" name="us2-karyotype-fetusB"/>
+<artifact id="Observation/us2-lhr" key="Observation-us2-lhr" name="us2-lhr"/>
+<artifact id="Observation/us2-lungvolume" key="Observation-us2-lungvolume" name="us2-lungvolume"/>
+<artifact id="Patient/us2-mother" key="Patient-us2-mother" name="us2-mother"/>
+<artifact id="RelatedPerson/us2-mother-fetusA" key="RelatedPerson-us2-mother-fetusA" name="us2-mother-fetusA"/>
+<artifact id="RelatedPerson/us2-mother-fetusB" key="RelatedPerson-us2-mother-fetusB" name="us2-mother-fetusB"/>
+<artifact id="Condition/us2-pregnancy" key="Condition-us2-pregnancy" name="us2-pregnancy"/>
+<artifact id="DiagnosticReport/us2-ultrasoundreport20" key="DiagnosticReport-us2-ultrasoundreport20" name="us2-ultrasoundreport20"/>
+<artifact id="DiagnosticReport/us2-ultrasoundreport24" key="DiagnosticReport-us2-ultrasoundreport24" name="us2-ultrasoundreport24"/>
+<artifact id="Procedure/us2-ultrasoundscan20" key="Procedure-us2-ultrasoundscan20" name="us2-ultrasoundscan20"/>
+<artifact id="Procedure/us2-ultrasoundscan24" key="Procedure-us2-ultrasoundscan24" name="us2-ultrasoundscan24"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="background" name="Background"/>
+<page key="downloads" name="Downloads"/>
+<page key="index" name="Home"/>
+<page key="toc" name="Table of Contents"/>
+<page key="use-case1-service-request" name="Use Case 1 Service Request"/>
+<page key="use-case2-result-reporting" name="Use Case 2 Result Reporting"/>
+<page key="use-case3-data-transfer" name="Use Case 3 Data Transfer"/>
+</specification>

@@ -1,0 +1,11 @@
+{
+  "package-id": "hl7.fhir.uv.ibcm",
+  "version": "0.1.0",
+  "path": "https://fhir.org/fhir/ibcm/2023Sep",
+  "mode": "working",
+  "status": "draft",
+  "sequence": "Releases",
+  "desc": "This publication is the first draft of the Implementation Guide to seek for feedback from the CHOICE group",
+  "title" : "International Birth And Child Model Implementation Guide",
+  "first": true
+}

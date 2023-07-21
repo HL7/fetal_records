@@ -3,8 +3,8 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: international-birth-and-child-model
-canonical: https://fhir.org/fhir
+id: hl7.fhir.uv.ibcm
+canonical: https://fhir.org/fhir/uv/ibcm
 name: InternationalBirthAndChildModel
 title: International Birth And Child Model Implementation Guide
 # title: Example Title
@@ -15,10 +15,10 @@ fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
 copyrightYear: 2023+
 releaseLabel: ci-build # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 # license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
-# jurisdiction: urn:iso:std:iso:3166#US "United States of America" # https://www.hl7.org/fhir/valueset-jurisdiction.html
+jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 publisher:
   name: HL7 International - CHOICE Work Group
-  url: http://example.org/example-publisher
+  url: http://hl7.org/Special/committees/patientcare
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -82,7 +82,10 @@ menu:
     Service Request: use-case1-service-request.html
     Result Reporting: use-case2-result-reporting.html
     Data Transfer: use-case3-data-transfer.html
-  Artifacts: artifacts.html
+  Artifacts:
+    Resource Profiles: artifacts.html#1
+    Data Type: artifacts.html#2
+    Examples: artifacts.html#3
   Downloads: 
     Downloads: downloads.html
 
