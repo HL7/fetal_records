@@ -74,7 +74,7 @@ In this project we consider the following methodology to reach our goal;
 
 * Step 3: Define the data
     
-    In this step we take a deeper look into the functional needs of the data. We strive to set a logical data model for the various clinical resources. The set in each use case can be different of course, but when we collect  all the data, we would come to a common set for mother, fetas and child. The consideration here is if we can recognize the data as a feature of the mother, fetas or child. Once we have achieved a consensus on the set, we can consider this as a core set, which contains the most common data used in the pregnancy and birth care. Where possible we try to set an appropriate terminology binding. 
+    In this step we take a deeper look into the functional needs of the data. We strive to set a logical data model for the various clinical resources. The set in each use case can be different of course, but when we collect  all the data, we would come to a common set for mother, fetus and child. The consideration here is if we can recognize the data as a feature of the mother, fetus or child. Once we have achieved a consensus on the set, we can consider this as a core set, which contains the most common data used in the pregnancy and birth care. Where possible we try to set an appropriate terminology binding. 
 
 * Step 4: Define the transactions
 
@@ -82,7 +82,7 @@ In this project we consider the following methodology to reach our goal;
 
 * Step 5: Define the technical framework
 
-    All previous steps describe data in a functional mode, but for systems to be able to communicate physically you need to define the technical framework. In this project we choose to use the FHIR as the technical framework to communicate the data from one system to another system. Here we run into questions like how to relate the data to appropriate resource such as mother or fetas. Current resources might not yet be capable of relating to resources other than with a patient-id.
+    All previous steps describe data in a functional mode, but for systems to be able to communicate physically you need to define the technical framework. In this project we choose to use the FHIR as the technical framework to communicate the data from one system to another system. Here we run into questions like how to relate the data to appropriate resource such as mother or fetus. Current resources might not yet be capable of relating to resources other than with a patient-id.
 
 ### How to read this Guide
 The main sections of this IG are:
