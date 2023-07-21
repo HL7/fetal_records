@@ -74,8 +74,6 @@ Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code =  $sct#17190001 "Congenital diaphragmatic hernia (disorder)"
-* bodySite.extension.url = "http://hl7.org/fhir/StructureDefinition/bodysite-laterality"
-* bodySite.extension.valueCodeableConcept =  $sct#7771000 "Left"
 * bodySite =  $sct#5798000 "Diaphragm"
 * subject = Reference(Patient/uc2-fetusA)
 
