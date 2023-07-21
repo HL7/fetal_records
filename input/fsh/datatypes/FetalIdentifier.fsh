@@ -6,7 +6,7 @@
 
 Profile:        FetalIdentifier
 Parent:         Identifier
-Id:             fetus
+Id:             fetal-record-identifier
 Title:          "IBCM Fetus Identifier profile"
 Description:    "DataType Profile to represent Identifier of a fetal record in context."
 

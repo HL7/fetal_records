@@ -26,6 +26,7 @@ Usage: #example
 * gender = #female
 
 
+
 Instance: us1-mother-relatedperson
 InstanceOf: RelatedPerson
 Description: "An example of a RelatedPerson defining the mother relationship from the perspective of the fetus Patient"
