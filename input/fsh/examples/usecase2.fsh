@@ -2,21 +2,23 @@
 // Project: Pregnancy, Fetal and Child Health Record - Use Case 2 - Result Reporting (id1669729437342)
 // View: Initial view
 
-Instance: us2-mother
+Instance: uc2-mother
 InstanceOf: Patient
+Title: "UC2 Mother Patient"
 Description: "An example of a mother Patient"
 Usage: #example
 * identifier.system = "http://www.acme.com/identifiers/patient"
 * identifier.value = "123456"
 * gender = #female
 * birthDate = "1994-02-01"
-* link[0].other = Reference(RelatedPerson/us2-mother-fetusA)
+* link[0].other = Reference(RelatedPerson/uc2-mother-fetusA)
 * link[0].type = #seealso
-* link[1].other = Reference(RelatedPerson/us2-mother-fetusB)
+* link[1].other = Reference(RelatedPerson/uc2-mother-fetusB)
 * link[1].type = #seealso
 
-Instance: us2-fetusA
+Instance: uc2-fetusA
 InstanceOf: IBCMFetalPatient
+Title: "UC2 Fetus A Patient"
 Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
@@ -25,16 +27,18 @@ Usage: #example
 * identifier.value = "A"
 
 
-Instance: us2-mother-fetusA
+Instance: uc2-mother-fetusA
 InstanceOf: RelatedPerson
+Title: "UC2 RelatedPerson Fetus A"
 Description: "An example of a RelatedPerson defining the mother relationship from the perspective of the fetus Patient"
 Usage: #example
-* patient = Reference(Patient/us2-fetusA)
+* patient = Reference(Patient/uc2-fetusA)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "Mother"
 
 
-Instance: us2-fetusB
+Instance: uc2-fetusB
 InstanceOf: IBCMFetalPatient
+Title: "UC2 Fetus B Patient"
 Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
@@ -43,25 +47,28 @@ Usage: #example
 * identifier.value = "B"
 
 
-Instance: us2-mother-fetusB
+Instance: uc2-mother-fetusB
 InstanceOf: RelatedPerson
+Title: "UC2 RelatedPerson Fetus B"
 Description: "An example of a RelatedPerson defining the mother relationship from the perspective of the fetus Patient"
 Usage: #example
-* patient = Reference(us2-fetusB)
+* patient = Reference(uc2-fetusB)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "Mother"
 
 
-Instance: us2-pregnancy
+Instance: uc2-pregnancy
 InstanceOf: Condition
+Title: "UC2 Pregnancy"
 Description: "An example of a pregnancy Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * code =  $sct#364320009 "Pregnancy observable (observable entity)"
-* subject = Reference(us2-mother)
+* subject = Reference(uc2-mother)
 
 
-Instance: us2-17190001
+Instance: uc2-17190001
 InstanceOf: Condition
+Title: "UC2 Congenital Diaphragmatic Hernia Fetus A"
 Description: "An example of a fetus disorder (Congenital diaphragmatic hernia) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
@@ -70,147 +77,160 @@ Usage: #example
 * bodySite.extension.url = "http://hl7.org/fhir/StructureDefinition/bodysite-laterality"
 * bodySite.extension.valueCodeableConcept =  $sct#7771000 "Left"
 * bodySite =  $sct#5798000 "Diaphragm"
-* subject = Reference(Patient/us2-fetusA)
+* subject = Reference(Patient/uc2-fetusA)
 
-Instance: us2-416010008
+Instance: uc2-416010008
 InstanceOf: Condition
+Title: "UC2 Hypospadias Fetus B"
 Description: "An example of a fetus disorder (Hypospadias) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code =  $sct#416010008 "Hypospadias (disorder)"
-* subject = Reference(Patient/us2-fetusB)
+* subject = Reference(Patient/uc2-fetusB)
 
-Instance: us2-lhr
+Instance: uc2-lhr
 InstanceOf: Observation
+Title: "UC2 Lung-Head Ratio Fetus A"
 Description: "An example of a fetus Lung-Head Ratio Observation"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#LHR "Lung-Head Ratio"
-* subject = Reference(us2-fetusA)
+* subject = Reference(uc2-fetusA)
 * valueQuantity = 0.67 '%' "%"
 
 
-Instance: us2-karyotype-fetusA
+Instance: uc2-karyotype-fetusA
 InstanceOf: Observation
+Title: "UC2 Karyotype Fetus A"
 Description: "An example of a Karyotype Observation"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#734840008 "Karyotype (cell structure)"
-* subject = Reference(us2-fetusA)
+* subject = Reference(uc2-fetusA)
 * valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
 
 
-Instance: us2-karyotype-fetusB
+Instance: uc2-karyotype-fetusB
 InstanceOf: Observation
+Title: "UC2 Karyotype Fetus B"
 Description: "An example of a Karyotype Observation"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#734840008 "Karyotype (cell structure)"
-* subject = Reference(us2-fetusB)
+* subject = Reference(uc2-fetusB)
 * valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
 
 
-Instance: us2-gestation20
+Instance: uc2-gestation20
 InstanceOf: Observation
+Title: "UC2 Gestationale Age 20 weeks"
 Description: "An example of a fetal gestational age Observation (20 weeks)"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#57036006 "Fetal gestational age (observable entity)"
-* subject = Reference(us2-mother)
-* focus = Reference(us2-pregnancy)
+* subject = Reference(uc2-mother)
+* focus = Reference(uc2-pregnancy)
 * valueQuantity = 20 'wk' "wk"
 
 
-Instance: us2-gestation24
+Instance: uc2-gestation24
 InstanceOf: Observation
+Title: "UC2 Gestationale Age 24.14 weeks"
 Description: "An example of a fetal gestational age Observation (24.14 weeks)"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#57036006 "Fetal gestational age (observable entity)"
-* subject = Reference(us2-mother)
-* focus = Reference(us2-pregnancy)
+* subject = Reference(uc2-mother)
+* focus = Reference(uc2-pregnancy)
 * valueQuantity = 24.14 'wk' "wk"
 
 
-Instance: us2-lungvolume
+Instance: uc2-lungvolume
 InstanceOf: Observation
+Title: "UC2 Observed:Expected Lung Volume Fetus A"
 Description: "An example of an observed:expected lung volume Observation"
 Usage: #example
 * status = #final
 * category = $observation-category#vital-signs "Vital Signs"
 * code =  $sct#xxx "Observed:expected lung volume"
-* subject = Reference(us2-fetusA)
+* subject = Reference(uc2-fetusA)
 * valueQuantity = 0.21 '%' "%"
 * method =  $sct#113091000 "Magnetic resonance imaging (procedure)"
 
 
-Instance: us2-ultrasoundreport24
+Instance: uc2-ultrasoundreport24
 InstanceOf: DiagnosticReport
+Title: "UC2 UltraSound Scan 24 weeks"
 Description: "An example of an ultrasound scan DiagnosticReport (24 weeks)"
 Usage: #example
 * status = #final
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
-* subject = Reference(us2-mother)
-* result[0] = Reference(us2-lhr)
-* result[+] = Reference(us2-lungvolume)
+* subject = Reference(uc2-mother)
+* result[0] = Reference(uc2-lhr)
+* result[+] = Reference(uc2-lungvolume)
 
 
-Instance: us2-ultrasoundreport20
+Instance: uc2-ultrasoundreport20
 InstanceOf: DiagnosticReport
+Title: "UC2 UltraSound Report 24 weeks"
 Description: "An example of an ultrasound scan DiagnosticReport (20 weeks)"
 Usage: #example
 * status = #final
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
-* subject = Reference(us2-mother)
+* subject = Reference(uc2-mother)
 
 
-Instance: us2-amniocentesisreport
+Instance: uc2-amniocentesisreport
 InstanceOf: DiagnosticReport
+Title: "UC2 Amniocentesis Report"
 Description: "An example of an amniocentesis DiagnosticReport"
 Usage: #example
 * status = #final
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
-* subject = Reference(us2-mother)
-* result[0] = Reference(us2-karyotype-fetusA)
-* result[+] = Reference(us2-karyotype-fetusB)
+* subject = Reference(uc2-mother)
+* result[0] = Reference(uc2-karyotype-fetusA)
+* result[+] = Reference(uc2-karyotype-fetusB)
 
 
-Instance: us2-ultrasoundscan20
+Instance: uc2-ultrasoundscan20
 InstanceOf: Procedure
+Title: "UC2 UltraSound Scan Procedure 20 weeks"
 Description: "An example of an ultrasound scan Procedure (20 weeks)"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
-* extension.valueReference = Reference(us2-gestation20)
+* extension.valueReference = Reference(uc2-gestation20)
 * status = #completed
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
-* subject = Reference(us2-mother)
-* report = Reference(us2-ultrasoundreport20)
+* subject = Reference(uc2-mother)
+* report = Reference(uc2-ultrasoundreport20)
 
 
-Instance: us2-ultrasoundscan24
+Instance: uc2-ultrasoundscan24
 InstanceOf: Procedure
+Title: "UC2 UltraSound Scan Procedure 24 weeks"
 Description: "An example of an ultrasound scan Procedure (24 weeks)"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
-* extension.valueReference = Reference(us2-gestation24)
+* extension.valueReference = Reference(uc2-gestation24)
 * status = #completed
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
-* subject = Reference(us2-mother)
-* report = Reference(us2-ultrasoundreport24)
+* subject = Reference(uc2-mother)
+* report = Reference(uc2-ultrasoundreport24)
 
 
-Instance: us2-amniocentesis
+Instance: uc2-amniocentesis
 InstanceOf: Procedure
+Title: "UC2 Amniocentesis Procedure"
 Description: "An example of an amniocentesis Procedure"
 Usage: #example
 * status = #completed
 * code =  $sct#34536000 "Amniocentesis (procedure)"
-* subject = Reference(us2-mother)
-* report = Reference(us2-amniocentesisreport)
+* subject = Reference(uc2-mother)
+* report = Reference(uc2-amniocentesisreport)
 

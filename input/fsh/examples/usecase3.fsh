@@ -2,8 +2,9 @@
 // Project: Achondroplasia_Modeling (id1678031521974)
 // View: Before Birth
 
-Instance: cfsb1678031552105
+Instance: uc3-mother
 InstanceOf: Patient
+Title: "UC3 Mother Patient"
 Description: "An example of a mother Patient"
 Usage: #example
  
@@ -19,238 +20,255 @@ Usage: #example
 * contact.telecom.value = "+94775588745"
 
 
-Instance: cfsb1678032682677
+Instance: uc3-encounter-firstMOHvisit
 InstanceOf: Encounter
+Title: "UC3 First MOH Visit"
 Description: "An example of an Encounter of the mother Patient (first MOH Visit)"
 Usage: #example
 
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
 * status = #completed
 // Reference to Location: Location/Local-MOH
-* location.location = Reference(cfsb1678032872351)
+* location.location = Reference(uc3-location-localMOH)
 
 
 
-Instance: cfsb1678032872351
+Instance: uc3-location-localMOH
 InstanceOf: Location
+Title: "UC3 Local MOH"
 Description: "Location/Local-MOH"
 Usage: #example
  
 
-Instance: cfsb1678032962708
+Instance: uc3-pregnancytest-firstMOHVisit
 InstanceOf: Observation
+Title: "UC3 Pregnancy Test First MOH Visit"
 Description: "An example of a qualitative pregnancy test Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
-* encounter = Reference(cfsb1678032682677)
+* encounter = Reference(uc3-encounter-firstMOHvisit)
 * identifier.system = "$loinc"
 * code = $loinc#2106-3
 * code.text = "Pregnancy test, qualitative"
 * valueString = "Positive"
 
 
-Instance: cfsb1678033209571
+Instance: uc3-bodyweight-firstMOHvisit
 InstanceOf: Observation
+Title: "UC3 Body Weight First MOH Visit"
 Description: "An example of a body weight Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
 * code = $loinc#3141-9
 * code.text = "Body weight Measured"
  // Reference to Encounter: MOH Visit
-* encounter = Reference(cfsb1678032682677)
+* encounter = Reference(uc3-encounter-firstMOHvisit)
 
 
-Instance: cfsb1678033304138
+Instance: uc3-bodyheight-firstMOHvisit
 InstanceOf: Observation
+Title: "UC3 Body Height First MOH Visit"
 Description: "An example of a body height Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
-* encounter = Reference(cfsb1678032682677)
+* encounter = Reference(uc3-encounter-firstMOHvisit)
 * code = $loinc#3137-7
 * code.text = "Body height Measured"
 
 
-Instance: cfsb1678033379360
+Instance: uc3-hemoglobin-firstMOHvisit
 InstanceOf: Observation
+Title: "UC3 Hemoglobin First MOH Visit"
 Description: "An example of a hemoglobin Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
-* encounter = Reference(cfsb1678032682677)
+* encounter = Reference(uc3-encounter-firstMOHvisit)
 * code = $loinc#718-7
 * code.text = "Hemoglobin [Mass/volume] in Blood"
 
 
-Instance: cfsb1678033472437
+Instance: uc3-reducingsubstances-firstMOHvisit
 InstanceOf: Observation
+Title: "UC3 Reducing Substances First MOH Visit"
 Description: "An example of a reducing substances Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
-* encounter = Reference(cfsb1678032682677)
+* encounter = Reference(uc3-encounter-firstMOHvisit)
 
 * code = $loinc#5809-9
 * code.text = "Reducing substances [Presence] in Urine"
 
 
-Instance: cfsb1678033657903
+Instance: uc3-encounter-followupMOHvisit
 InstanceOf: Encounter
+Title: "UC3 Follow Up MOH Visit"
 Description: "An example of an Encounter of the mother Patient (MOH Visit Follow Up)"
 Usage: #example
 
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
 * status = #completed
 
 // Reference to Location: Location/Local-MOH
-* location.location = Reference(cfsb1678032872351)
+* location.location = Reference(uc3-location-localMOH)
 
 
 
-Instance: cfsb1678033768865
+Instance: uc3-uterusfundalheight-followupMOHvisit
 InstanceOf: Observation
+Title: "UC3 Uterus Fundal Height Follow Up MOH Visit"
 Description: "An example of a uterus fundal height Observation"
 Usage: #example
 
 * status = #final
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit Follow Up
-* encounter = Reference(cfsb1678033657903)
+* encounter = Reference(uc3-encounter-followupMOHvisit)
 
 * code = $loinc#11881-0
 * code.text = "Uterus Fundal height Tape measure"
 
 
-Instance: cfsb1678033874792
+Instance: uc3-bodyweight-followupMOHvisit
 InstanceOf: Observation
+Title: "UC3 Body Weight Follow Up MOH Visit"
 Description: "An example of a body weight Observation"
 Usage: #example
 
 * status = #final 
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit Follow Up
-* encounter = Reference(cfsb1678033657903)
+* encounter = Reference(uc3-encounter-followupMOHvisit)
 * code = $loinc#3141-9
 * code.text = "Body weight Measured"
 
 
-Instance: cfsb1678034144351
+Instance: uc3-encounter-admission
 InstanceOf: Encounter
+Title: "UC3 Admission"
 Description: "An example of an admission Encounter of the mother Patient"
 Usage: #example
 
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
 * status = #completed
 * length.value = 1
 // Reference to Location: Kandy Hospital
-* location.location = Reference(cfsb1678034462190)
+* location.location = Reference(uc3-location-KandyHospital)
 
 
-Instance: cfsb1678034462190
+Instance: uc3-location-KandyHospital
 InstanceOf: Location
+Title: "UC3 Kandy Hospital"
 Description: "An example of a Location (Kandy Hospital)"
 Usage: #example
 
-Instance: cfsb1678034484567
+Instance: uc3-childbirth
 InstanceOf: Procedure
+Title: "UC3 Child Birth"
 Description: "Child birth"
 Usage: #example
  
 // Reference to Patient: Mother
-* subject = Reference(cfsb1678031552105)
+* subject = Reference(uc3-mother)
 * status = #completed
 * code =  $sct#387713003
 * code.text = "Cesarean section"
  // Reference to Encounter: Admission
-* encounter = Reference(cfsb1678034144351)
+* encounter = Reference(uc3-encounter-admission)
  // Reference to Location: Kandy Hospital
-* location = Reference(cfsb1678034462190)
+* location = Reference(uc3-location-KandyHospital)
 * reason.concept.coding =  $sct#118997002
 * reason.concept.text = "Pregnancy with antenatal problem"
 
 
-Instance: cfsb1678034617442
+Instance: uc3-fetus
 InstanceOf: Patient
 Description: "An example of a baby Patient"
 Usage: #example
  
 
-Instance: cfsb1678035177721
+Instance: uc3-encounter-obsclinic
 InstanceOf: Encounter
+Title: "UC3 Obstetric Clinic Encounter"
 Description: "An example of an Encounter of the baby Patient (Obs Clinic)"
 Usage: #example
 
 * class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
 * status = #completed
 // Reference to Location: Kandy Hospital
-* location.location = Reference(cfsb1678034462190)
+* location.location = Reference(uc3-location-KandyHospital)
  // Reference to Patient: Fetus
-* subject = Reference(cfsb1678034617442)
+* subject = Reference(uc3-fetus)
 
 
-Instance: cfsb1678035296785
+Instance: uc3-femurlenght-obsclinic
 InstanceOf: Observation
+Title: "UC3 Femur Length Obstetric Clinic"
 Description: "An example of a femur length Observation"
 Usage: #example
 
 * status = #final
  // Reference to Patient: Fetus
-* subject = Reference(cfsb1678034617442)
+* subject = Reference(uc3-fetus)
 * code = $loinc#LP6702-7
 * code.text = "Ultrasound Estimated from FL"
 * valueQuantity.value = 40
 * valueQuantity.unit = "mm"
  // Reference to Encounter: Obs Clinic
-* encounter = Reference(cfsb1678035177721)
+* encounter = Reference(uc3-encounter-obsclinic)
 
 
-Instance: cfsb1678035441094
+Instance: uc3-headcircumference-obsclinic
 InstanceOf: Observation
+Title: "UC3 Head Circumference Obstetric Clinic"
 Description: "An example of a head circumference Observation"
 Usage: #example
 
 * status = #final
  // Reference to Patient: Fetus
-* subject = Reference(cfsb1678034617442)
+* subject = Reference(uc3-fetus)
  // Reference to Encounter: Obs Clinic
-* encounter = Reference(cfsb1678035177721)
+* encounter = Reference(uc3-encounter-obsclinic)
 * code = $loinc#LP6713-4
 * code.text = "Ultrasound Estimated from HC"
 * valueQuantity.value = 318
 * valueQuantity.unit = "mm"
 
 
-Instance: cfsb1678036069583
+Instance: uc3-familymemberhistory
 InstanceOf: FamilyMemberHistory
+Title: "UC3 FamilyMemberHistory of Fetus"
 Description: "An example of the family member history of the fetus Patient"
 Usage: #example
  
 // Reference to Patient: Fetus
-* patient = Reference(cfsb1678034617442)
+* patient = Reference(uc3-fetus)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
 * status = #partial
 * condition.code =  $sct#86268005 "Achondroplasia"
