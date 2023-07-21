@@ -1,58 +1,66 @@
-### Background
+### Introduction
 
-#### Introduction
+This implementation guide aims to provide guidelines and support on the handling of fetus data in FHIR. The Project ID: 932
 
-This implementation guide aims to provide guidelines and support on the handling of fetus data in FHIR.
-
-No one disputes that when a child is born, that the child can be a patient with it’s own unique identifier. The mother herself is also a recognizable patient, but there are no rules for the unborn child in the period when it is conceived as an embryo until its birth. Some systems record the data of the foetus as if it is a body tissue of the mother. Other systems do have some form of resource that resembles a patient. 
-
-There is obviously a need to relate the data to the foetus, because the data is not a characteristic of the mother, but rather to this specific foetus, for example the femur length. This is even more the case for twins or triplets, where each foetus have their own characteristics that need to be distinguished from each other.
-
-But if it is a resource with an identifier, how do you deal with this identifier? On the other hand certain resources, like a procedure, expect a reference to a subject. Are there restrictions to these subjects? Or is it able to be filled with new type of resource? 
-These are some of the questions we dive into in this project. Additional questions are summed up in the paragraph about project questions.
- 
-Ultimately the ambition is to provide guidelines about the handling of data around the foetus. 
-As HL7 PCWG we are aware that we cannot enforce how data is structured within an EHR system, but we can set up rules on how data should be communicated between systems. A similar way of handling these data would make the ease of connecting systems to each other and comparison of data much easier.
-
-All countries collect data of pregnancy and birth for their vital health statistics and research purposes. The fact that we might introduce a separate resource could make it more complex. You might need to search data of this specific resource. But this resource does not always exist. This document will also address these issues.
+#### Contributors
+* Michael Tan (Woxingtan - project lead)
+* Mike Padula (Children Hospital of Philadelphia)
+* Lisabeth Siderius
+* Lillian Minne (Nictiz)
+* Shovan Roy (TechIntro, Australia)
+* Sahan Perera (University of Colombo, Sri Lanka)
+* Ben McAlister (Oracle)
+* Stephen Chu (Australian Digital Health Agency)
 
 #### Goal
 The goals of this project include:
 * define typical use cases where handling of data of the unborn child frequently occurs. The use cases we are specifically interested in, are the use cases where communication between IT systems are necessary and data has to be transferred from one system to the other. 
 * Provide guidance on implementation, use and handling of the relevant FHIR resources and terminology value sets
 
+#### Considerations:
+To manage our project deliverables and timeline, we will set priorities to use cases and work out the use cases in the sequence of priority. Other use cases will remain open for future projects.
+
 #### Target audience
+
+This implementation guide is meant for IT developers who develop IT systems for the child health and obstetrics sector. These IT systems are not stand alone systems, but usually make part of a framework of systems within an institution or a network  of institutions. A hospital would have a general EHR system. An ultrasound technician or a lab technician would perform their research in their own specialised system. This leads to the necessity to communicate between different software systems on different hardware environments. In this IG we explain how to communicate data of a fetus between systems.
+
+IT vendors will only develop under assignment of their end user. The secondary target of this IG are the stakeholders that sponsor  IT vendors to develop these  communication tools. 
+In general we can classify the stakeholders in these different groups:
+* Direct healthcare providers who have direct contact with the pregnant mother:
+* * Midwife, obstetrician, general practitioner, paediatrician, nurses
+* Paramedical services, research lab technicians and nurses who perform procedures on behalf of the direct healthcare providers such as:
+* * Ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
+* Governmental institutions who gather and perform research on data about pregnancy, birth and vital health statistics or have a public health task in screening or prevention of certain disorders.
+
+All these stakeholders work generally in their own system. 
+
+The governmental and research  institutions also perform their tasks on their own systems which are generally on regional or national level, which results in a one to many communication between this institution and the different providers of data.
+
 
 #### Scope
 
-As mentioned above: as HL7 we realise that we cannot dictate mandatory rules for the registration of foetal data in systems. The objective of this project is to set guidelines how we can communicate data when a foetus is involved in the healthcare process. 
+##### In scope
+The focus of this Implementation Guide is the handling of data of a fetus. This means that we concentrate on the ante natal ( or prenatal) period, because once birth has taken place the data related to the child would be represented with a FHIR resource of patient for the child. 
+
+The objective of this project is to set guidelines on how we can communicate data when a fetus is involved in the healthcare process. 
+
+##### Out of Scope
+
+As HL7 we realise that we cannot dictate mandatory rules for the registration of fetus data in systems. 
+
+Neither are we in the position to dictate the use of certain terminologies. There might be licence issues with certain terminologies.  However we will provide examples as guidance to show how certain values can be expressed.  
 
 This project is intended to solely address issues on the informational aspect of data handling in the normal process flow of day to day pregnancy and birth healthcare. We are aware that this subject can easily be misunderstood, but legal, religious or political issues are not part of this project.  This project should also not be misused or quoted by any party to prove any statement for their own conviction. 
+ 
 
-#### Issues we want to solve
-This project aims to address the following questions:
-* In which situations do  we consider the foetus as a separate resource?
-* Which algorithms of identification of the foetus do we consider?
-* Which type of procedures for a foetus do we consider in scope?
-* What is the impact for procedures and medication if it is specifically meant for the foetus and not the mother?
-* Which data do we relate to the foetus ( instead of the mother)?
-* Which kind of data do we need for research, surveillance of birth defects and vital statistics?
+### Roles & Systems
 
+In the use cases we provide in this Implementation Guide we have simplified the scenario’s using 2 simple actors.An initiator and a recipient. There are 2 basic patterns:
+* The initiator has a service request and the recipient is the potential fulfiller of the request.
+* The initiator has data available it wants to exchange with a recipient. Note that the recipient could be the initiator who has placed a service request. 
 
-#### Stakeholders
-
-The task of HL7 is to provide technical provisions to support the stakeholders mentioned above in their need of registration and communication of foetal data. In general we can classify the stakeholders in these different groups:
-Direct healthcare providers who have direct contact with the pregnant mother:
-Midwife, obstetrician, general practitioner, paediatrician, nurses
-Paramedical services, research lab technicians and nurses who perform procedures on behalf of the direct healthcare providers such as:
-Ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
-Governmental institutions who gather and perform research on data about pregnancy, birth and vital health statistics or have a public health task in screening or prevention of certain disorders.
-
-All these stakeholders work generally in their own system. A hospital would have a general EHR system. An ultrasound technician or a lab technician would perform their research in their own specialised system. This leads to the necessity to communicate between different software systems on different hardware environments. This is where HL7 fits in with their standards on communication. 
-
-The governmental institutions also perform their tasks on their own systems which are generally on regional or national level, which results in a one to many communication between this institution and the different providers of data.
-
-#### Roles & systems
+In chapter 7 ( scenario’s) we elaborate on these roles in the various use cases.
+How these systems communicate with each other ( message mechanism or RESTful concept) is less of importance here. It could be either. The focus is on the data content. 
 
 #### Methodology
 In this project we consider the following methodology to reach our goal;
@@ -66,7 +74,7 @@ In this project we consider the following methodology to reach our goal;
 
 * Step 3: Define the data
     
-    In this step we take a deeper look into the functional needs of the data. We strive to set a logical data model for the various clinical resources. The set in each use case can be different of course, but when we collect  all the data, we would come to a common set for mother, foetus and child. The consideration here is if we can recognize the data as a feature of the mother, foetus or child. Once we have achieved a consensus on the set, we can consider this as a core set, which contains the most common data used in the pregnancy and birth care. Where possible we try to set an appropriate terminology binding. 
+    In this step we take a deeper look into the functional needs of the data. We strive to set a logical data model for the various clinical resources. The set in each use case can be different of course, but when we collect  all the data, we would come to a common set for mother, fetas and child. The consideration here is if we can recognize the data as a feature of the mother, fetas or child. Once we have achieved a consensus on the set, we can consider this as a core set, which contains the most common data used in the pregnancy and birth care. Where possible we try to set an appropriate terminology binding. 
 
 * Step 4: Define the transactions
 
@@ -74,7 +82,7 @@ In this project we consider the following methodology to reach our goal;
 
 * Step 5: Define the technical framework
 
-    All previous steps describe data in a functional mode, but for systems to be able to communicate physically you need to define the technical framework. In this project we choose to use the FHIR as the technical framework to communicate the data from one system to another system. Here we run into questions like how to relate the data to appropriate resource such as mother or foetus. Current resources might not yet be capable of relating to resources other than with a patient-id.
+    All previous steps describe data in a functional mode, but for systems to be able to communicate physically you need to define the technical framework. In this project we choose to use the FHIR as the technical framework to communicate the data from one system to another system. Here we run into questions like how to relate the data to appropriate resource such as mother or fetas. Current resources might not yet be capable of relating to resources other than with a patient-id.
 
 ### How to read this Guide
 The main sections of this IG are:
@@ -84,6 +92,6 @@ The main sections of this IG are:
     - [Service Request](usecase1.html): This page provides guidance on service requests
     - [Result Reporting](usecase2.html): This page provides guidance on result reporting
     - [Data Transfer](usecase3.html): This page provides guidance on data transfer
-- [FHIR Artefacts](artifacts.html): Detailed descriptions and formal definitions of all FHIR artefacts defined in this guide
+- [FHIR Artifacts](artifacts.html): Detailed descriptions and formal definitions of all FHIR artifacts defined in this guide
 - Support - The Support pages include useful links and downloads
 - [Downloads](downloads.html): Allows downloading a copy of this implementation guide and other useful information
