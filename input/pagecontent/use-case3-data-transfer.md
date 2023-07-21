@@ -1,5 +1,5 @@
 ### Description
- This use case is a basic use case where you communicate data from one system to another system. Usually such a data transfer is a combined set of data with information about the mother, the pregnancy or the foetus. 
+ This use case is a basic use case where you communicate data from one system to another system. Usually such a data transfer is a combined set of data with information about the mother, the pregnancy or the fetus. 
   
 ### Narrative
 #### Achondroplasia detection and treatment

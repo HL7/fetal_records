@@ -1,5 +1,5 @@
 ### Description
-A request is placed to perform a task / procedure  on a foetus or to administer (medication) substance to a foetus. The request is processed with different possible states (of reply). These states are not relevant for the discussion about the foetus.
+A request is placed to perform a task / procedure  on a fetus or to administer (medication) substance to a fetus. The request is processed with different possible states (of reply). These states are not relevant for the discussion about the fetus.
  
 ### Narrative
 #### Postnatal intervention - d-transposition of the great arteries with intact ventricular septum
