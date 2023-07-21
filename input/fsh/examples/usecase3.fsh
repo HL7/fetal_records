@@ -189,7 +189,7 @@ Usage: #example
 * encounter = Reference(cfsb1678034144351)
  // Reference to Location: Kandy Hospital
 * location = Reference(cfsb1678034462190)
-* reason.concept.coding.code =  $sct#118997002
+* reason.concept.coding =  $sct#118997002
 * reason.concept.text = "Pregnancy with antenatal problem"
 
 
