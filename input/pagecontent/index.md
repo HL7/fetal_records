@@ -5,7 +5,7 @@ This implementation guide aims to provide guidelines and support on the handling
 #### Contributors
 * Michael Tan (Woxingtan - project lead)
 * Mike Padula (Children Hospital of Philadelphia)
-* Lisabeth Siderius
+* Liesbeth Siderius
 * Lillian Minne (Nictiz)
 * Shovan Roy (TechIntro, Australia)
 * Sahan Perera (University of Colombo, Sri Lanka)
