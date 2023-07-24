@@ -23,7 +23,7 @@ Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
 * extension.valueCode = #unborn
-* identifier.system = "http://hl7.org/fhir/identifiers/fetus"
+* identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "A"
 
 
@@ -43,7 +43,7 @@ Description: "An example of a fetus Patient"
 Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
 * extension.valueCode = #unborn
-* identifier.system = "http://hl7.org/fhir/identifiers/fetus"
+* identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "B"
 
 

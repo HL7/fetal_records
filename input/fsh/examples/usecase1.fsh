@@ -23,7 +23,7 @@ Usage: #example
 * extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
 * extension.valueCode = #unborn
 * identifier.type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
-* identifier.system = "http://hl7.org/fhir/identifiers/fetus"
+* identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "A"
 * gender = #female
 
