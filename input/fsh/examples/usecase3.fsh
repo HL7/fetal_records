@@ -53,9 +53,7 @@ Usage: #example
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
-* identifier.system = "$loinc"
-* code = $loinc#2106-3
-* code.text = "Pregnancy test, qualitative"
+* code = $loinc#2106-3 "Choriogonadotropin (pregnancy test) [Presence] in Urine"
 * valueString = "Positive"
 
 
@@ -68,8 +66,7 @@ Usage: #example
 * status = #final
 // Reference to Patient: Mother
 * subject = Reference(uc3-mother)
-* code = $loinc#3141-9
-* code.text = "Body weight Measured"
+* code = $loinc#3141-9 "Body weight Measured"
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
 
@@ -85,8 +82,7 @@ Usage: #example
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
-* code = $loinc#3137-7
-* code.text = "Body height Measured"
+* code = $loinc#3137-7 "Body height Measured"
 
 
 Instance: uc3-hemoglobin-firstMOHvisit
@@ -100,8 +96,7 @@ Usage: #example
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
-* code = $loinc#718-7
-* code.text = "Hemoglobin [Mass/volume] in Blood"
+* code = $loinc#718-7 "Hemoglobin [Mass/volume] in Blood"
 
 
 Instance: uc3-reducingsubstances-firstMOHvisit
@@ -116,8 +111,7 @@ Usage: #example
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
 
-* code = $loinc#5809-9
-* code.text = "Reducing substances [Presence] in Urine"
+* code = $loinc#5809-9 "Reducing substances [Presence] in Urine"
 
 
 Instance: uc3-encounter-followupMOHvisit
@@ -148,8 +142,7 @@ Usage: #example
  // Reference to Encounter: MOH Visit Follow Up
 * encounter = Reference(uc3-encounter-followupMOHvisit)
 
-* code = $loinc#11881-0
-* code.text = "Uterus Fundal height Tape measure"
+* code = $loinc#11881-0 "Uterus Fundal height Tape measure"
 
 
 Instance: uc3-bodyweight-followupMOHvisit
@@ -163,8 +156,7 @@ Usage: #example
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit Follow Up
 * encounter = Reference(uc3-encounter-followupMOHvisit)
-* code = $loinc#3141-9
-* code.text = "Body weight Measured"
+* code = $loinc#3141-9 "Body weight Measured"
 
 
 Instance: uc3-encounter-admission
@@ -197,14 +189,12 @@ Usage: #example
 // Reference to Patient: Mother
 * subject = Reference(uc3-mother)
 * status = #completed
-* code =  $sct#387713003
-* code.text = "Cesarean section"
+* code =  $sct#11466000 "Cesarean section (procedure)"
  // Reference to Encounter: Admission
 * encounter = Reference(uc3-encounter-admission)
  // Reference to Location: Kandy Hospital
 * location = Reference(uc3-location-KandyHospital)
-* reason.concept.coding =  $sct#118997002
-* reason.concept.text = "Pregnancy with antenatal problem"
+* reason.concept.coding =  $sct#159761000146108 "Problem during pregnancy"
 
 
 Instance: uc3-fetus
@@ -236,8 +226,7 @@ Usage: #example
 * status = #final
  // Reference to Patient: Fetus
 * subject = Reference(uc3-fetus)
-* code = $loinc#LP6702-7
-* code.text = "Ultrasound Estimated from FL"
+* code = $loinc#11963-6 "Fetal Femur diaphysis [Length] US"
 * valueQuantity.value = 40
 * valueQuantity.unit = "mm"
  // Reference to Encounter: Obs Clinic
@@ -255,8 +244,7 @@ Usage: #example
 * subject = Reference(uc3-fetus)
  // Reference to Encounter: Obs Clinic
 * encounter = Reference(uc3-encounter-obsclinic)
-* code = $loinc#LP6713-4
-* code.text = "Ultrasound Estimated from HC"
+* code = $loinc#11984-2 "Fetal Head Circumference US"
 * valueQuantity.value = 318
 * valueQuantity.unit = "mm"
 

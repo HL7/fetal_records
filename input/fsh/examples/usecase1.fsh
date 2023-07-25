@@ -112,7 +112,7 @@ Usage: #example
 * status = #final
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc1-mother)
-* result = Reference(uc1-estimatedbirthweight)
+* result = Reference(uc1-estimatedfetalbodyweight)
 
 
 Instance: uc1-ultrasoundscan
@@ -141,14 +141,14 @@ Usage: #example
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-admin-location#inpatient "Inpatient"
 * medication.reference = Reference(Medication/med0310)
 * subject = Reference(uc1-fetus)
-* supportingInformation = Reference(Observation/uc1-estimatedFetalWeight)
+* supportingInformation = Reference(Observation/uc1-estimatedfetalbodyweight)
 * reason.reference = Reference(uc1-399216004)
 * note.text = "Administration just after birth following umbilical line placement"
 * dosageInstruction.text = "based on a dosing weight of 3kg"
 //* dosageInstruction.timing.repeat.when = http://hl7.org/fhir/event-timing#IMD "Immediate"
 * dosageInstruction.route =  $sct#58100008 "Intra-arterial route"
-* dosageInstruction.method =  $sct#86482009 "Umbilical line tube care"
+* dosageInstruction.method =  $sct#386482009 "Umbilical line tube care"
 * dosageInstruction.doseAndRate.rateQuantity = 0.01 'mg/kg/min'
 // Reference to Observation: Estimated birth weight
-* supportingInformation[1] = Reference(uc1-estimatedbirthweight)
+* supportingInformation[1] = Reference(uc1-estimatedfetalbodyweight)
 
