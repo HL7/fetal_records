@@ -120,12 +120,11 @@ InstanceOf: Procedure
 Title: "UC1 UltraSound Report 37 weeks"
 Description: "An example of an ultrasound scan DiagnosticReport (37 weeks)"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
-* extension.valueReference = Reference(uc1-gestation37)
 * status = #completed
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc1-mother)
 * report = Reference(uc1-ultrasoundreport)
+* supportingInfo = Reference(uc1-gestation37)
 
 
 Instance: uc1-medicationrequest
@@ -139,7 +138,7 @@ Usage: #example
 * status = #active
 * intent = #order
 * category = http://terminology.hl7.org/CodeSystem/medicationrequest-admin-location#inpatient "Inpatient"
-* medication.reference = Reference(Medication/med0310)
+* medication.reference = Reference(Medication/uc1-medication)
 * subject = Reference(uc1-fetus)
 * supportingInformation = Reference(Observation/uc1-estimatedfetalbodyweight)
 * reason.reference = Reference(uc1-399216004)
@@ -151,4 +150,13 @@ Usage: #example
 * dosageInstruction.doseAndRate.rateQuantity = 0.01 'mg/kg/min'
 // Reference to Observation: Estimated birth weight
 * supportingInformation[1] = Reference(uc1-estimatedfetalbodyweight)
+
+Instance: uc1-medication
+InstanceOf: Medication
+Title: "UC1 Medication Prostaglandin E"
+Description: "An example of a Medication"
+Usage: #example
+* code = http://snomed.info/sct#418517007 "Prostaglandin group E"
+* status = #active
+
 

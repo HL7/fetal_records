@@ -203,12 +203,11 @@ InstanceOf: Procedure
 Title: "UC2 UltraSound Scan Procedure 20 weeks"
 Description: "An example of an ultrasound scan Procedure (20 weeks)"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
-* extension.valueReference = Reference(uc2-gestation20)
 * status = #completed
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc2-mother)
 * report = Reference(uc2-ultrasoundreport20)
+* supportingInfo = Reference(uc2-gestation20)
 
 
 Instance: uc2-ultrasoundscan24
@@ -222,6 +221,7 @@ Usage: #example
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc2-mother)
 * report = Reference(uc2-ultrasoundreport24)
+* supportingInfo = Reference(uc2-gestation20)
 
 
 Instance: uc2-amniocentesis
