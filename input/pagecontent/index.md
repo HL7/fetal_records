@@ -27,9 +27,9 @@ This implementation guide is meant for IT developers who develop IT systems for 
 IT vendors will only develop under assignment of their end user. The secondary target of this IG are the stakeholders that sponsor  IT vendors to develop these  communication tools. 
 In general we can classify the stakeholders in these different groups:
 * Direct healthcare providers who have direct contact with the pregnant mother:
-* * Midwife, obstetrician, general practitioner, paediatrician, nurses
+  * Midwife, obstetrician, general practitioner, paediatrician, nurses
 * Paramedical services, research lab technicians and nurses who perform procedures on behalf of the direct healthcare providers such as:
-* * Ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
+  * Ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
 * Governmental institutions who gather and perform research on data about pregnancy, birth and vital health statistics or have a public health task in screening or prevention of certain disorders.
 
 All these stakeholders work generally in their own system. 
@@ -88,10 +88,11 @@ In this project we consider the following methodology to reach our goal;
 The main sections of this IG are:
 -  [Background](background.html): The background section provides business context for the implementation guide and information that implementers should be
       familiar with before reading the remainder of the IG.  There could be multiple pages for this.
-- Guidance - The Guidance pages document best practices and how to use the profiles and transactions defined in this guide for a couple of use cases. 
-    - [Service Request](usecase1.html): This page provides guidance on service requests
-    - [Result Reporting](usecase2.html): This page provides guidance on result reporting
-    - [Data Transfer](usecase3.html): This page provides guidance on data transfer
+- Guidance - The Guidance pages document best practices and how to use the profiles and transactions defined in this guide for a couple of use cases.
+    - [Thought Process](thought-process.html): This page provides guidance on the thought process applied while decding and designing the profile to represent a fetus record.
+    - [Service Request](use-case1-service-request.html): This page provides guidance on service requests
+    - [Result Reporting](use-case2-result-reporting.html): This page provides guidance on result reporting
+    - [Data Transfer](use-case3-data-transfer.html): This page provides guidance on data transfer
 - [FHIR Artifacts](artifacts.html): Detailed descriptions and formal definitions of all FHIR artifacts defined in this guide
 - Support - The Support pages include useful links and downloads
 - [Downloads](downloads.html): Allows downloading a copy of this implementation guide and other useful information
