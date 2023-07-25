@@ -74,7 +74,8 @@ Title: "UC2 Congenital Diaphragmatic Hernia Fetus A"
 Description: "An example of a fetus disorder (Congenital diaphragmatic hernia) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
-* category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[+] =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code =  $sct#17190001 "Congenital diaphragmatic hernia (disorder)"
 * bodySite =  $sct#5798000 "Diaphragm"
 * subject = Reference(Patient/uc2-fetusA)
@@ -85,7 +86,8 @@ Title: "UC2 Hypospadias Fetus B"
 Description: "An example of a fetus disorder (Hypospadias) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
-* category =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* category.coding[0] = $condition-category#problem-list-item "Problem List Item"
+* category.coding[+] =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
 * code =  $sct#416010008 "Hypospadias (disorder)"
 * subject = Reference(Patient/uc2-fetusB)
 
@@ -215,8 +217,8 @@ InstanceOf: Procedure
 Title: "UC2 UltraSound Scan Procedure 24 weeks"
 Description: "An example of an ultrasound scan Procedure (24 weeks)"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo"
-* extension.valueReference = Reference(uc2-gestation24)
+
+
 * status = #completed
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc2-mother)
