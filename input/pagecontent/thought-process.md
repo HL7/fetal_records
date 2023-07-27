@@ -11,7 +11,7 @@ When we look at the data in the pregnancy period we can distinguish the followin
 #### Considerations for fetus as a subject
 For fetus data and child-specific maternal data we need a fetus entity to link the data to. In this  An important target of the project is to weigh the different options and settle for a decision.  The following options have been reviewed:
 
-##### Body structure
+##### Option 1: Body Structur
 BodyStructure - use the BodyStructure resource for a fetus (although it feels a bit awkward, this is a valid use of the BodyStructure resource in FHIR)
 * Pro’s
   * No new FHIR resource required
@@ -28,7 +28,7 @@ BodyStructure - use the BodyStructure resource for a fetus (although it feels a 
      * References to BodyStructure
      * Relating BodyStructure to both (pregnant) woman and the born child
 
-##### Fetus resource
+##### Option 2: Fetus resource
 Fetus resource - create a new FHIR resource for a fetus
 * Pro’s
   * Flexibility in the design of the fetus model
@@ -45,7 +45,7 @@ Fetus resource - create a new FHIR resource for a fetus
   * Requires a new FHIR resource
   * Requires changes in other FHIR resources where references to the fetus entity are needed (e.g. subject of an Observation)
 
-##### Patient extension
+##### Option 3: Patient extension
 Patient - use the Patient resource for a fetus with an additional extension to indicate the born status of the patient.
 * Pro’s
   * No new FHIR resource required
@@ -65,6 +65,7 @@ The workgroup has decided to model a fetus as a Patient (third option). We consi
 * Con’s
   * What will be the effect if you cannot digest the extension?
   * Status born will never be used, because by then the fetus has become a child patient
+
 ##### Extension for born status with a coded value (born/unborn/demised/unknown)
 * Profile: <https://simplifier.net/internationalbirthandchildmodel/fetus2>
 * Pro’s
@@ -73,6 +74,7 @@ The workgroup has decided to model a fetus as a Patient (third option). We consi
   * What will be the effect if you cannot digest the extension?
   * Status born will never be used, because by then the fetus has become a child patient
   * Status demised can also be captured in existing element 
+
 ##### Birthdate unavailable and date absent reason unborn
 * Profile: <https://simplifier.net/internationalbirthandchildmodel/fetus3>
 * Pro’s
@@ -80,6 +82,7 @@ The workgroup has decided to model a fetus as a Patient (third option). We consi
   * Requires no addition of extensions
 * Con’s
   * Data absent reason has a required binding on a generic list of codes which is used across resources/elements, while the code unborn is very specific
+
 ##### Replace birthDate with a birth[x] choice element which has the options birthDate (implying the patient is born) and bornBoolean.
 * Logical model: <https://simplifier.net/internationalbirthandchildmodel/fetus4>
 * Note that only the choice element is added in this model since the rest would be an exact copy of the Patient resource
@@ -88,6 +91,7 @@ The workgroup has decided to model a fetus as a Patient (third option). We consi
   * Modelling is in line with elements like deceased[x] where a date value implies boolean value is true
   * Also provides option to include time of birth in a dateTime (optional)
   * Con’s
+  
 High impact on normative content, requires a Patient2
 
 #### Final choice
