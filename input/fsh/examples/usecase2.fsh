@@ -223,7 +223,7 @@ Usage: #example
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc2-mother)
 * report = Reference(uc2-ultrasoundreport24)
-* supportingInfo = Reference(uc2-gestation20)
+* supportingInfo = Reference(uc2-gestation24)
 
 
 Instance: uc2-amniocentesis
