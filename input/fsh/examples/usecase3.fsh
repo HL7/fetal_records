@@ -194,7 +194,7 @@ Usage: #example
 * encounter = Reference(uc3-encounter-admission)
  // Reference to Location: Kandy Hospital
 * location = Reference(uc3-location-KandyHospital)
-* reason.concept.coding =  $sct#159761000146108 "Problem during pregnancy"
+* reason.concept.coding =  $sct#173300003 "Disorder of pregnancy (disorder)"
 
 
 Instance: uc3-fetus
