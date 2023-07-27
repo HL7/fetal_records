@@ -6,11 +6,13 @@ This implementation guide aims to provide guidelines and support on the handling
 * Michael Tan (Woxingtan - project lead)
 * Mike Padula (Children Hospital of Philadelphia)
 * Liesbeth Siderius
-* Lillian Minne (Nictiz)
+* Lilian Minne (Nictiz)
 * Shovan Roy (TechIntro, Australia)
 * Sahan Perera (University of Colombo, Sri Lanka)
 * Ben McAlister (Oracle)
 * Stephen Chu (Australian Digital Health Agency)
+* John Silva
+* Rob Hausam 
 
 #### Goal
 The goals of this project include:
