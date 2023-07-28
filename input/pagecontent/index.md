@@ -8,7 +8,7 @@ This implementation guide aims to provide guidelines and support on the handling
 * Liesbeth Siderius
 * Lilian Minne (Nictiz)
 * Shovan Roy (TechIntro, Australia)
-* Sahan Perera (University of Colombo, Sri Lanka)
+* Sahan Damsiri Perera (University of Colombo, Sri Lanka)
 * Ben McAlister (Oracle)
 * Stephen Chu (Australian Digital Health Agency)
 * John Silva
