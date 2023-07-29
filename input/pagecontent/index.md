@@ -12,7 +12,7 @@ This implementation guide aims to provide guidelines and support on the handling
 * Ben McAlister (Oracle)
 * Stephen Chu (Australian Digital Health Agency)
 * John Silva
-* Rob Hausam 
+* Rob Hausam (Hausam Consulting LLC)
 
 #### Goal
 The goals of this project include:
