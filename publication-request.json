@@ -1,7 +1,7 @@
 {
   "package-id": "hl7.fhir.uv.ibcm",
   "version": "1.0.0-ballot",
-  "path": "https://fhir.org/fhir/uv/ibcm/1.0.0-ballot",
+  "path": "http://hl7.org/fhir/uv/ibcm/1.0.0-ballot",
   "mode": "working",
   "status": "ballot",
   "sequence": "Releases",
@@ -9,6 +9,6 @@
   "title" : "International Birth And Child Model Implementation Guide",
   "first": true,
   "category": "Clinical Records",
-  "ci-build": "https://build.fhir.org/ig/HL7/fetal_records/",
+  "ci-build": "http://build.fhir.org/ig/HL7/fetal_records",
   "introduction": "During a pregnancy clinical systems communicate data about the mother, the unborn fetus(es), the pregnancy, and child(ren). This includes information shared among EHR, ultrasound, radiology, lab and pharmacy systems. This IG explains how you model and communicate data and relate the fetus(es) to the mother using the FHIR resource Patient with extension indicating a distinct fetal record. Options for referencing information such as observation about the fetus as a body site within the maternal record will also be included. Examples and diagrams are provided to illustrate the use cases."
 }
