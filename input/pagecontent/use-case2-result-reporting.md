@@ -8,7 +8,7 @@ The data  of the results can be categorised in 3 classes:
 
 ### Narrative
 #### Congenital Diaphragmatic Hernia in Twin Pregnancy
-28 yo Gravida 1 Para 0 Mother with a dichorionic/diamniotic twin pregnancy, fetus A antenatally diagnosed with left congenital diaphragmatic hernia (CDH) containing small bowel, spleen and stomach in the left hemithorax on level 2 ultrasound at 20 weeks. Evaluation at 24 1/7 weeks revealed Lung-Head Ratio (LHR) of 0.67  via ultrasound and an observed:expected lung volume 0.21 via MRI. Normal karyotype - 46 XY on amniocentesis for both fetuses. fetus B noted to have hypospadias on antenatal ultrasound. 
+28 yo Gravida 1 Para 0 Mother with a dichorionic/diamniotic twin pregnancy, fetus A antenatally diagnosed with left congenital diaphragmatic hernia (CDH) containing small bowel, spleen and stomach in the left hemithorax on level 2 ultrasound at 20 weeks. Evaluation at 24 1/7 weeks revealed congenital hypoplasia of lung via ultrasound. Normal karyotype - 46 XY on amniocentesis for both fetuses. fetus B noted to have hypospadias on antenatal ultrasound. 
   
 ### Graph
 ![Use case 2](usecase2.png "Use case 2 Result Reporting")

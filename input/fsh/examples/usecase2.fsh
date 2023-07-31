@@ -91,16 +91,15 @@ Usage: #example
 * code =  $sct#416010008 "Hypospadias (disorder)"
 * subject = Reference(Patient/uc2-fetusB)
 
-Instance: uc2-lhr
+Instance: uc2-hypoplasialung
 InstanceOf: Observation
-Title: "UC2 Lung-Head Ratio Fetus A"
-Description: "An example of a fetus Lung-Head Ratio Observation"
+Title: "UC2 Hypoplasia of Lung"
+Description: "An example of a Hypoplasia of Lung Observation"
 Usage: #example
 * status = #final
-* category = $observation-category#vital-signs "Vital Signs"
-* code =  $sct#LHR "Lung-Head Ratio"
+* code =  $sct#80825009 "Congenital hypoplasia of lung"
 * subject = Reference(uc2-fetusA)
-* valueQuantity = 0.67 '%' "%"
+* valueBoolean = true
 
 
 Instance: uc2-karyotype-fetusA
@@ -153,19 +152,6 @@ Usage: #example
 * valueQuantity = 24.14 'wk' "wk"
 
 
-Instance: uc2-lungvolume
-InstanceOf: Observation
-Title: "UC2 Observed:Expected Lung Volume Fetus A"
-Description: "An example of an observed:expected lung volume Observation"
-Usage: #example
-* status = #final
-* category = $observation-category#vital-signs "Vital Signs"
-* code =  $sct#xxx "Observed:expected lung volume"
-* subject = Reference(uc2-fetusA)
-* valueQuantity = 0.21 '%' "%"
-* method =  $sct#113091000 "Magnetic resonance imaging (procedure)"
-
-
 Instance: uc2-ultrasoundreport24
 InstanceOf: DiagnosticReport
 Title: "UC2 UltraSound Scan 24 weeks"
@@ -174,8 +160,7 @@ Usage: #example
 * status = #final
 * code =  $sct#241493005 "Ultrasound scan for fetal growth (procedure)"
 * subject = Reference(uc2-mother)
-* result[0] = Reference(uc2-lhr)
-* result[+] = Reference(uc2-lungvolume)
+* result[0] = Reference(uc2-hypoplasialung)
 
 
 Instance: uc2-ultrasoundreport20
