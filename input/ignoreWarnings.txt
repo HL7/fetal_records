@@ -4,10 +4,5 @@
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
 
-# Related person information warnings should be suppressed as recommended in FMG
-
-%None of the codings provided are in the value set 'Patient Relationship Type'%
-
-# Supress warrning of identifier example. We will add example later
-
-%The Implementation Guide contains no examples for this data type profile%
+# In our DiagnosticReport examples we need the use of specific codes which are not available in the preferred value set 'LOINC Diagnostic Report Codes'
+None of the codings provided are in the value set 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#241493005)
