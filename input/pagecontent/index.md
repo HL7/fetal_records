@@ -11,7 +11,7 @@ This implementation guide aims to provide guidelines and support on the handling
 * Sahan Damsiri Perera (University of Colombo, Sri Lanka)
 * Ben McAlister (Oracle)
 * Stephen Chu (Australian Digital Health Agency)
-* John Silva
+* John Silva (Vermonster, LLC)
 * Rob Hausam (Hausam Consulting LLC)
 
 #### Goal
