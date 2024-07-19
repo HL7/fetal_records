@@ -25,6 +25,9 @@ Id:             ibcm-fetal-record
 Title:          "IBCM Fetal Record Profile"
 Description:    "Profile to represent a fetal record which will be used to collect data around the unborn child/fetus (e.g. headcircumference, fetal heart rate and position of the fetus)"
 
+* . ^short = "Information about a fetus receiving health care services"
+* . ^definition = "Demographics and other administrative information about a fetus receiving care or other health-related services."
+
 * obeys ibcm-pat-1
 
 * ^extension[structuredefinition-fmm].valueInteger = 0
