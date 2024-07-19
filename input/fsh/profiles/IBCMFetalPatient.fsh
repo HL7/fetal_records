@@ -29,6 +29,7 @@ Description:    "Profile to represent a fetal record which will be used to colle
 
 * ^extension[structuredefinition-fmm].valueInteger = 0
 * ^extension[structuredefinition-standards-status].valueCode = #draft
+* ^extension[structuredefinition-wg].valueCode = #pc
 
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-bornStatus named bornStatus 0..1
 

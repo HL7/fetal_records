@@ -98,7 +98,7 @@ Description: "An example of a fetus disorder Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
-* category.coding[+] =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* category.coding[+] =  $sct#414025005 "Disorder of fetus and/or newborn (disorder)"
 * code =  $sct#399216004 "D - transposition of the great vessels"
 * subject = Reference(uc1-fetus)
 * evidence.reference = Reference(uc1-ultrasoundreport)

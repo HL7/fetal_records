@@ -64,11 +64,14 @@ Description: "An example of a body weight Observation"
 Usage: #example
 
 * status = #final
+* category = $observation-category#vital-signs "Vital Signs"
 // Reference to Patient: Mother
 * subject = Reference(uc3-mother)
-* code = $loinc#3141-9 "Body weight Measured"
+* code = $loinc#29463-7 "Body weight"
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
+* effectiveDateTime = "2021-07-03"
+* valueQuantity = 49 'kg' "kg"
 
 
 Instance: uc3-bodyheight-firstMOHvisit
@@ -78,11 +81,14 @@ Description: "An example of a body height Observation"
 Usage: #example
 
 * status = #final
+* category = $observation-category#vital-signs "Vital Signs"
 // Reference to Patient: Mother
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
-* code = $loinc#3137-7 "Body height Measured"
+* code = $loinc#8302-2 "Body height"
+* effectiveDateTime = "2021-07-03"
+* valueQuantity = 147 'cm' "cm"
 
 
 Instance: uc3-hemoglobin-firstMOHvisit
@@ -152,11 +158,14 @@ Description: "An example of a body weight Observation"
 Usage: #example
 
 * status = #final 
+* category = $observation-category#vital-signs "Vital Signs"
 // Reference to Patient: Mother
 * subject = Reference(uc3-mother)
+* code = $loinc#29463-7 "Body weight"
  // Reference to Encounter: MOH Visit Follow Up
 * encounter = Reference(uc3-encounter-followupMOHvisit)
-* code = $loinc#3141-9 "Body weight Measured"
+* effectiveDateTime = "2021-08-02"
+* valueQuantity = 50 'kg' "kg"
 
 
 Instance: uc3-encounter-admission

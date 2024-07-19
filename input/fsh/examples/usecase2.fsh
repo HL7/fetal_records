@@ -75,7 +75,7 @@ Description: "An example of a fetus disorder (Congenital diaphragmatic hernia) C
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
-* category.coding[+] =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* category.coding[+] =  $sct#414025005 "Disorder of fetus and/or newborn (disorder)"
 * code =  $sct#17190001 "Congenital diaphragmatic hernia (disorder)"
 * bodySite =  $sct#5798000 "Diaphragm"
 * subject = Reference(Patient/uc2-fetusA)
@@ -87,7 +87,7 @@ Description: "An example of a fetus disorder (Hypospadias) Condition"
 Usage: #example
 * clinicalStatus = $condition-clinical-code#active
 * category.coding[0] = $condition-category#problem-list-item "Problem List Item"
-* category.coding[+] =  $sct#414025005 "Disorder of fetus or newborn (disorder)"
+* category.coding[+] =  $sct#414025005 "Disorder of fetus and/or newborn (disorder)"
 * code =  $sct#416010008 "Hypospadias (disorder)"
 * subject = Reference(Patient/uc2-fetusB)
 
