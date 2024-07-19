@@ -12,5 +12,3 @@ The data  of the results can be categorised in 3 classes:
   
 ### Graph
 ![Use case 2](usecase2.png "Use case 2 Result Reporting")
-
-### Resource list

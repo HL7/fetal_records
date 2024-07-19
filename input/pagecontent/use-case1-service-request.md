@@ -10,5 +10,3 @@ Prostoglandin E infusion 0.01 mg/kg/min was ordered based on a dosing weight of 
 
 ### Graph
 ![Use case 1](usecase1.png "Use case 1 Service Request")
-
-### Resource list

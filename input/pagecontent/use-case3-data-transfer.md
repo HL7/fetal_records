@@ -94,5 +94,3 @@ The boy was floppy, had short limbs with proximal shortening and macrocephaly.
 
 ### Graph
 ![Use case 3](usecase3.png "Use case 3 Data Transfer")
-
-### Resource list
