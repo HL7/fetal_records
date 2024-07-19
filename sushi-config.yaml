@@ -15,9 +15,12 @@ copyrightYear: 2023+
 releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
+extension:
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg  
+    valueCode: pc
 publisher:
-  name: HL7 International - CHOICE Work Group
-  url: http://hl7.org/Special/committees/patientcare
+  name: HL7 International / Patient Care
+  url: http://www.hl7.org/Special/committees/patientcare
   # email: test@example.org
 
 # The dependencies property corresponds to IG.dependsOn. The key is the
@@ -84,8 +87,7 @@ menu:
     Data Transfer: use-case3-data-transfer.html
   Artifacts:
     Resource Profiles: artifacts.html#1
-    Data Type: artifacts.html#2
-    Examples: artifacts.html#3
+    Examples: artifacts.html#2
   Downloads: 
     Downloads: downloads.html
 
