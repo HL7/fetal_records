@@ -81,7 +81,7 @@ menu:
   Home: index.html
   Background: background.html
   Guidance:
-    Thought Process: thought-process.html
+    Introduction: guidance.html
     Service Request: use-case1-service-request.html
     Result Reporting: use-case2-result-reporting.html
     Data Transfer: use-case3-data-transfer.html
