@@ -7,8 +7,17 @@
 # Related person information warnings should be suppressed as recommended in FMG
 %None of the codings provided are in the value set 'Patient Relationship Type'%
 
-# Supress warrning of identifier example. We will add example later
-%The Implementation Guide contains no examples for this data type profile%
+# Related person information warnings should be suppressed as recommended in FMG
+Geen van de gevonden codings bestaat in de waardelijst 'Patient Relationship Type' (http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype|5.0.0) en een coding uit deze waardelijst is aanbevolen (codes = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH)
 
 # In our DiagnosticReport examples we need the use of specific codes which are not available in the preferred value set 'LOINC Diagnostic Report Codes'
 None of the codings provided are in the value set 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0), and a coding is recommended to come from this value set) (codes = http://snomed.info/sct#241493005)
+
+# In our DiagnosticReport examples we need the use of specific codes which are not available in the preferred value set 'LOINC Diagnostic Report Codes'
+Geen van de gevonden codings bestaat in de waardelijst 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0) en een coding uit deze waardelijst is aanbevolen (codes = http://snomed.info/sct#241493005)
+
+# We do not do anything with jurisdiction in this IG 
+Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+
+# We do not do anything with jurisdiction in this IG 
+Referentie naar verouderde ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0

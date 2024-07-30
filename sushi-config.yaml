@@ -11,6 +11,8 @@ title: International Birth And Child Model Implementation Guide
 status: draft # draft | active | retired | unknown
 version: 1.0.0-ballot
 fhirVersion: 5.0.0 # https://www.hl7.org/fhir/valueset-FHIR-version.html
+dependencies:
+  hl7.fhir.uv.extensions: current
 copyrightYear: 2023+
 releaseLabel: ballot # ci-build | draft | qa-preview | ballot | trial-use | release | update | normative+trial-use
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
@@ -82,7 +84,7 @@ menu:
   Background: background.html
   Guidance:
     Introduction: guidance.html
-    Service Request: use-case1-service-request.html
+    Medication Request: use-case1-medication-request.html
     Result Reporting: use-case2-result-reporting.html
     Data Transfer: use-case3-data-transfer.html
   Artifacts:

@@ -19,6 +19,25 @@ Usage: #example
 * contact.telecom.system = #phone
 * contact.telecom.value = "+94775588745"
 
+// Reference to RelatedPerson: Mother of fetus
+* link.other = Reference(RelatedPerson/uc3-mother-fetus)
+* link.type = #seealso
+
+
+Instance: uc3-practitioner
+InstanceOf: Practitioner
+Title: "UC3 Practitioner"
+Description: "An example of a Practitioner"
+Usage: #example
+* name.text = "Dr. Hart"
+
+Instance: uc3-practitioner2
+InstanceOf: Practitioner
+Title: "UC3 Practitioner"
+Description: "An example of a Practitioner"
+Usage: #example
+* name.text = "Dr. White"
+
 
 Instance: uc3-encounter-firstMOHvisit
 InstanceOf: Encounter
@@ -56,6 +75,8 @@ Usage: #example
 * code = $loinc#2106-3 "Choriogonadotropin (pregnancy test) [Presence] in Urine"
 * valueString = "Positive"
 
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2023-12-19"
 
 Instance: uc3-bodyweight-firstMOHvisit
 InstanceOf: Observation
@@ -72,7 +93,8 @@ Usage: #example
 * encounter = Reference(uc3-encounter-firstMOHvisit)
 * effectiveDateTime = "2021-07-03"
 * valueQuantity = 49 'kg' "kg"
-
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2023-12-19"
 
 Instance: uc3-bodyheight-firstMOHvisit
 InstanceOf: Observation
@@ -90,6 +112,8 @@ Usage: #example
 * effectiveDateTime = "2021-07-03"
 * valueQuantity = 147 'cm' "cm"
 
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2023-12-19"
 
 Instance: uc3-hemoglobin-firstMOHvisit
 InstanceOf: Observation
@@ -104,6 +128,8 @@ Usage: #example
 * encounter = Reference(uc3-encounter-firstMOHvisit)
 * code = $loinc#718-7 "Hemoglobin [Mass/volume] in Blood"
 
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2023-12-19"
 
 Instance: uc3-reducingsubstances-firstMOHvisit
 InstanceOf: Observation
@@ -118,6 +144,9 @@ Usage: #example
 * encounter = Reference(uc3-encounter-firstMOHvisit)
 
 * code = $loinc#5809-9 "Reducing substances [Presence] in Urine"
+
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2023-12-19"
 
 
 Instance: uc3-encounter-followupMOHvisit
@@ -150,6 +179,9 @@ Usage: #example
 
 * code = $loinc#11881-0 "Uterus Fundal height Tape measure"
 
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2024-01-30"
+
 
 Instance: uc3-bodyweight-followupMOHvisit
 InstanceOf: Observation
@@ -167,21 +199,8 @@ Usage: #example
 * effectiveDateTime = "2021-08-02"
 * valueQuantity = 50 'kg' "kg"
 
-
-Instance: uc3-encounter-admission
-InstanceOf: Encounter
-Title: "UC3 Admission"
-Description: "An example of an admission Encounter of the mother Patient"
-Usage: #example
-
-* class = http://terminology.hl7.org/CodeSystem/v3-ActCode#AMB "ambulatory"
-// Reference to Patient: Mother
-* subject = Reference(uc3-mother)
-* status = #completed
-* length.value = 1
-// Reference to Location: Kandy Hospital
-* location.location = Reference(uc3-location-KandyHospital)
-
+* performer = Reference(Practitioner/uc3-practitioner)
+* effectiveDateTime = "2024-01-30"
 
 Instance: uc3-location-KandyHospital
 InstanceOf: Location
@@ -189,27 +208,13 @@ Title: "UC3 Kandy Hospital"
 Description: "An example of a Location (Kandy Hospital)"
 Usage: #example
 
-Instance: uc3-childbirth
-InstanceOf: Procedure
-Title: "UC3 Child Birth"
-Description: "Child birth"
-Usage: #example
- 
-// Reference to Patient: Mother
-* subject = Reference(uc3-mother)
-* status = #completed
-* code =  $sct#11466000 "Cesarean section (procedure)"
- // Reference to Encounter: Admission
-* encounter = Reference(uc3-encounter-admission)
- // Reference to Location: Kandy Hospital
-* location = Reference(uc3-location-KandyHospital)
-* reason.concept.coding =  $sct#173300003 "Disorder of pregnancy (disorder)"
-
 
 Instance: uc3-fetus
 InstanceOf: Patient
-Description: "An example of a baby Patient"
+Description: "An example of a fetus Patient"
 Usage: #example
+* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-fetalStatus"
+* extension.valueCode = #potential-for-live-birth
  
 
 Instance: uc3-encounter-obsclinic
@@ -241,6 +246,8 @@ Usage: #example
  // Reference to Encounter: Obs Clinic
 * encounter = Reference(uc3-encounter-obsclinic)
 
+* performer = Reference(Practitioner/uc3-practitioner2)
+* effectiveDateTime = "2024-04-09"
 
 Instance: uc3-headcircumference-obsclinic
 InstanceOf: Observation
@@ -257,6 +264,9 @@ Usage: #example
 * valueQuantity.value = 318
 * valueQuantity.unit = "mm"
 
+* performer = Reference(Practitioner/uc3-practitioner2)
+* effectiveDateTime = "2024-04-09"
+
 
 Instance: uc3-familymemberhistory
 InstanceOf: FamilyMemberHistory
@@ -269,3 +279,34 @@ Usage: #example
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "mother"
 * status = #partial
 * condition.code =  $sct#86268005 "Achondroplasia"
+
+
+Instance: uc3-careplan
+InstanceOf: CarePlan
+Description: "Management Plan"
+Usage: #example
+ 
+// Reference to Patient: Mother
+* subject = Reference(uc3-mother)
+// Reference to Encounter: Encounter Obs Clinic
+* encounter = Reference(uc3-encounter-obsclinic)
+* status = #active
+
+* intent = #plan
+
+Instance: uc3-mother-fetus
+InstanceOf: RelatedPerson
+Title: "UC3 RelatedPerson Fetus"
+Description: "An example of a RelatedPerson defining the mother relationship from the perspective of the fetus Patient"
+Usage: #example
+* patient = Reference(Patient/uc3-fetus)
+* relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "Mother"
+
+Instance: uc3-pregnancy
+InstanceOf: Condition
+Title: "UC3 Pregnancy"
+Description: "An example of a pregnancy Condition"
+Usage: #example
+* clinicalStatus = $condition-clinical-code#active
+* code =  $sct#364320009 "Pregnancy observable (observable entity)"
+* subject = Reference(uc3-mother)

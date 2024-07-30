@@ -34,9 +34,9 @@ Description:    "Profile to represent a fetal record which will be used to colle
 * ^extension[structuredefinition-standards-status].valueCode = #draft
 * ^extension[structuredefinition-wg].valueCode = #pc
 
-* extension contains http://hl7.org/fhir/StructureDefinition/patient-bornStatus named bornStatus 0..1
+* extension contains http://hl7.org/fhir/StructureDefinition/patient-fetalStatus named fetalStatus 0..1
 
-* gender and identifier.system and identifier.value and identifier and extension[bornStatus] MS
+* gender and identifier.system and identifier.value and identifier and extension[fetalStatus] MS
 
 
 

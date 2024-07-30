@@ -20,8 +20,8 @@ InstanceOf: IBCMFetalPatient
 Title: "UC1 Fetus Patient"
 Description: "An example of a fetus Patient"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
-* extension.valueCode = #unborn
+* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-fetalStatus"
+* extension.valueCode = #potential-for-live-birth
 * identifier.type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
 * identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "A"
@@ -37,6 +37,12 @@ Usage: #example
 * patient = Reference(uc1-fetus)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "Mother"
 
+Instance: uc1-practitioner
+InstanceOf: Practitioner
+Title: "UC1 Practitioner"
+Description: "An example of a Practitioner"
+Usage: #example
+* name.text = "Dr. Hunt"
 
 Instance: uc1-pregnancy
 InstanceOf: Condition
@@ -60,6 +66,8 @@ Usage: #example
 * subject = Reference(uc1-mother)
 * focus = Reference(uc1-pregnancy)
 * valueQuantity = 21.43 'wk' "wk"
+* performer = Reference(Practitioner/uc1-practitioner)
+* effectiveDateTime = "2024-03-22"
 
 
 Instance: uc1-gestation37
@@ -73,6 +81,8 @@ Usage: #example
 * subject = Reference(Patient/uc1-patient)
 * focus = Reference(uc1-pregnancy)
 * valueQuantity = 37.71 'wk' "wk"
+* performer = Reference(Practitioner/uc1-practitioner)
+* effectiveDateTime = "2024-07-14"
 
 // Reference to Patient: Mother
 * subject = Reference(uc1-mother)
@@ -87,7 +97,8 @@ Usage: #example
 * code = $loinc#89087-1 "Fetal Body weight Estimated"
 * subject = Reference(uc1-fetus)
 * valueQuantity = 2960 'g' "g"
-
+* performer = Reference(Practitioner/uc1-practitioner)
+* effectiveDateTime = "2024-03-22"
 * status = #final
 
 

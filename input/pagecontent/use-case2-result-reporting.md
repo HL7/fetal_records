@@ -8,17 +8,18 @@ Medication topics do not fall under diagnostics, but under a separate group call
 For reviewing the data about the fetus let us look at the following storyboard.
 
 >**Congenital Diaphragmatic Hernia in Twin Pregnancy**
+> 
 >28 yo Gravida 1 Para 0 Mother with a dichorionic/diamniotic twin pregnancy, fetus A antenatally diagnosed with **left congenital diaphragmatic hernia (CDH)** containing small bowel, spleen and stomach in the left hemithorax on level 2 ultrasound at 20 weeks. Evaluation at 24 1/7 weeks revealed Lung-Head Ratio (LHR) of 0.67  via ultrasound and an observed:expected lung volume 0.21 via MRI. Normal karyotype - 46 XY on amniocentesis for both fetuses. fetus B noted to have hypospadias on antenatal ultrasound. 
 
 What this use case addresses: Antenatal observations at specific gestational ages. Indication to differentiate 2 fetal records. For the example we will review:
 * The result reporting of the ultrasound and MRI at 24 weeks for fetus A and fetus B.
 * The result reporting at birth of twin A and twin B.
 
-The task performing professionals perform the service request such as ultrasound or lab research. The results of the procedure are registered in a separate system and reported back to the requesting EHR. In this paragraph we focus on the data that is communicated to the main EHR. This guideline should make clear what kind of data is being communicated and to which subject this data belongs.
+The task performing professionals perform the service request such as ultrasound or lab research. The results of the procedure are registered in a separate system and reported back to the requesting EHR. In this section we focus on the data that is communicated to the main EHR. This guideline should make clear what kind of data is being communicated and to which subject this data belongs.
 The data  of the results can be categorized in 3 classes:
-* Data that is clearly only about the mother
-* Data that is clearly only about ( one of) fetus(ses).
-* Data that is about the pregnancy and shared with mother and fetus.
+* data that is clearly only about the mother
+* data that is clearly only about (one of) fetus(ses).
+* data that is about the pregnancy and shared with mother and fetus.
 
 ##### Roles & systems
 Order receiver; Procedure performer. The systems are for example lab systems or ultra sound systems.
@@ -33,6 +34,7 @@ If the order placer does not comprehend the contents of the transaction, it obvi
 ![Use case 2 roles](usecase2-roles.png "Use case 2 Result Reporting")
 
 ##### FHIR
+The graph below shows the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG.
 
 ![Use case 1](usecase2.png "Use case 2 Result Reporting")
 
@@ -43,5 +45,5 @@ Notes: The following resources are not included in the list of examples
 * Observation 4 - Small bowel, spleen and stomach in left hemithorax
 
 Open issues/questions:
-* How to model “small bowel, spleen and stomach in left hemithorax” + relations to DiagnosticReport 1 and Condition 2
-* Who is the subject of Observations lung-head ratio and obs:exp lung volume? Is this still about fetus A?
+* how to model “small bowel, spleen and stomach in left hemithorax” + relations to DiagnosticReport 1 and Condition 2
+* who is the subject of Observations lung-head ratio and obs:exp lung volume? Is this still about fetus A?

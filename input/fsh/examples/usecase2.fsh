@@ -21,8 +21,8 @@ InstanceOf: IBCMFetalPatient
 Title: "UC2 Fetus A Patient"
 Description: "An example of a fetus Patient"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
-* extension.valueCode = #unborn
+* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-fetalStatus"
+* extension.valueCode = #potential-for-live-birth
 * identifier.type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
 * identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "A"
@@ -42,8 +42,8 @@ InstanceOf: IBCMFetalPatient
 Title: "UC2 Fetus B Patient"
 Description: "An example of a fetus Patient"
 Usage: #example
-* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-bornStatus"
-* extension.valueCode = #unborn
+* extension.url = "http://hl7.org/fhir/StructureDefinition/patient-fetalStatus"
+* extension.valueCode = #potential-for-live-birth
 * identifier.type =  http://terminology.hl7.org/CodeSystem/v2-0203#PI
 * identifier.system = "http://example.com/identifiers/fetus"
 * identifier.value = "B"
@@ -57,6 +57,12 @@ Usage: #example
 * patient = Reference(uc2-fetusB)
 * relationship = http://terminology.hl7.org/CodeSystem/v3-RoleCode#MTH "Mother"
 
+Instance: uc2-practitioner
+InstanceOf: Practitioner
+Title: "UC2 Practitioner"
+Description: "An example of a Practitioner"
+Usage: #example
+* name.text = "Dr. House"
 
 Instance: uc2-pregnancy
 InstanceOf: Condition
@@ -100,7 +106,8 @@ Usage: #example
 * code =  $sct#80825009 "Congenital hypoplasia of lung"
 * subject = Reference(uc2-fetusA)
 * valueBoolean = true
-
+* performer = Reference(Practitioner/uc2-practitioner)
+* effectiveDateTime = "2024-04-10"
 
 Instance: uc2-karyotype-fetusA
 InstanceOf: Observation
@@ -112,7 +119,8 @@ Usage: #example
 * code =  $sct#734840008 "Karyotype (cell structure)"
 * subject = Reference(uc2-fetusA)
 * valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
-
+* performer = Reference(Practitioner/uc2-practitioner)
+* effectiveDateTime = "2024-04-10"
 
 Instance: uc2-karyotype-fetusB
 InstanceOf: Observation
@@ -124,7 +132,8 @@ Usage: #example
 * code =  $sct#734840008 "Karyotype (cell structure)"
 * subject = Reference(uc2-fetusB)
 * valueCodeableConcept =  $sct#734871004 "Karyotype evaluation normal (finding)"
-
+* performer = Reference(Practitioner/uc2-practitioner)
+* effectiveDateTime = "2024-04-10"
 
 Instance: uc2-gestation20
 InstanceOf: Observation
@@ -137,7 +146,8 @@ Usage: #example
 * subject = Reference(uc2-mother)
 * focus = Reference(uc2-pregnancy)
 * valueQuantity = 20 'wk' "wk"
-
+* performer = Reference(Practitioner/uc2-practitioner)
+* effectiveDateTime = "2024-03-12"
 
 Instance: uc2-gestation24
 InstanceOf: Observation
@@ -150,7 +160,8 @@ Usage: #example
 * subject = Reference(uc2-mother)
 * focus = Reference(uc2-pregnancy)
 * valueQuantity = 24.14 'wk' "wk"
-
+* performer = Reference(Practitioner/uc2-practitioner)
+* effectiveDateTime = "2024-04-10"
 
 Instance: uc2-ultrasoundreport24
 InstanceOf: DiagnosticReport

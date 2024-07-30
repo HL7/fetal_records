@@ -1,27 +1,24 @@
 ### The need of recognizing a fetus
 
-No one disputes that when a child is born, that the child can be a patient with its own unique identifier. The mother herself is also a recognizable patient, but there are no rules for the unborn child in the period when it is conceived as an embryo until its birth. Some systems record the data of the fetus as if it is a body tissue of the mother. Other systems do have some form of resource that resembles a patient. 
-There is obviously a need to relate the data to the fetus, because the data is not a characteristic of  the mother, but rather to this specific fetus, for example the femur length. This is even more the case of twins or triplets, where each fetus has their own characteristics that need to be distinguished from each other.
+No one disputes that when a infant is born, the newborn infant can be a patient with its own unique identifier. The mother herself is also a recognizable patient, but prior to this IG  there are no consistent rules for addressing information directly pertinent to fetus prior to birth. Some systems record the data of the fetus as a body tissue of the mother. Other systems do have some form of resource that resembles a patient. 
+There exists a need to relate the data, such as specific observations (e.g. femur length) or conditions, to the fetus, because such data are characteristics of the fetus and not the mother. In cases of multples (e.g. twins or triplets) features of each fetus may need to be distinguished from each other.
 
 ### Questions to answer
 
-But if it is a resource with an identifier, how do you deal with this identifier? On the other   hand certain resources, like a procedure, expect a reference to a subject. Are there restrictions to these subjects? Or is it able to be filled with a new type of resource? 
-These are some of the questions we will dive into in this project. Additional questions are summed up in the paragraph about project questions.
+Our goal is to provide guidelines about the communication of data around the fetus. 
+As project team from HL7 PCWG we are aware that we cannot enforce how data is structured within an EHR system, but we can set up rules on how data should be communicated between systems. A similar way of handling these data would make the ease of connecting systems to each other and comparison of data much easier.
 
-Ultimately the ambition is to provide guidelines about the handling of data around the fetus. 
-As HL7 PCWG we are aware that we cannot enforce how data is structured within an EHR system, but we can set up rules on how data should be communicated between systems. A similar way of handling these data would make the ease of connecting systems to each other and comparison of data much easier.
-
-All countries collect data of pregnancy and birth for their vital health statistics and research purposes. The fact that we might introduce a separate resource could make it more complex. You might need to search data of this specific resource. But this resource does not always exist. This document will also address these issues.
+All countries collect data of pregnancy and birth for their vital health statistics and research purposes. The fact that we set rules how to use certain FHIR resources could make it more complex. You might need to search data of this specific resource. But this resource does not always exist. This document will also address these issues.
 
 #### Issues we want to solve (project questions)
 
 This Implementation Guide will address the following questions:
-* Which FHIR resource do we use when we relate data to the new life form?
-* When do  we consider the fetus as a separate resource?
-* Which algorithms of identification of the fetus do we consider?
-* Which data do we relate to which subject ( fetus versus mother)?
-* What is the impact for procedures and medication (i.e. other FHIR resources) if it is specifically meant for the fetus and not the mother?
-* Which kind of data do we need for research, surveillance of birth defects and vital statistics?
+* which FHIR resource do we use when we relate data to the new life form?
+* when do  we consider the fetus as a separate resource?
+* which algorithms of identification of the fetus do we consider?
+* which data do we relate to which subject ( fetus versus mother)?
+* what is the impact for procedures and medication (i.e. other FHIR resources) if it is specifically meant for the fetus and not the mother?
+* do we need special considerations for research, surveillance of birth defects and vital statistics?
 
 ##### Which FHIR resource do we use?
 
@@ -47,9 +44,9 @@ The sequence when we are introducing the implementation of this new FHIR resourc
 
 At the start of pregnancy when findings are observed and collected the first form of new life starts as an embryo. In general the findings  are either classified as characteristics of the mother as the patient, or are findings attached to the episode of pregnancy. As the pregnancy lingers on, the embryo will develop its own characteristics. The question arises when do we consider relating data to a separate resource (instead of the mother)?
 The guideline is to attach the characteristic data to the proper subject. In the episode of pregnancy the main subjects to which data could be related to are either:
-* The data are characteristics of the mother as patient;
-* The data are characteristics of the pregnancy as an episode;
-* The data are characteristics of the fetus.
+* the data are characteristics of the mother as patient;
+* the data are characteristics of the pregnancy as an episode;
+* the data are characteristics of the fetus.
 
 Obvious examples of characteristics of the fetus are measurements like femur length or heart beat of the fetus. Obvious examples of data attached to the pregnancy are the parity and gravidity of the pregnancy. 
 This means that once data is classified as characteristics of the fetus, it should be communicated as data attached to the fetus as a resource.
@@ -70,24 +67,24 @@ As a guideline we recommend that data is communicated with a persistent identifi
 
 The recommendation to keep the identifier persistent means that the identifier is generated at the start of the process when the requirement is triggered in the first system that wishes to recognize the fetus. If this system uses body tissue as the method to store the related subject, then the identifier of the body tissues is passed on as identifier in the FHIR resource of the patient with fetal status extension. If the first system uses a pseudo patient as the related subject, then the identifier would likely be generated as a patient identifier. 
 
-All subsequent systems that handle data of the subject fetus should be able to retain, reply or pass on the data with the same identifier. 
+All subsequent systems that handle data of the subject fetus SHALL be able to retain, reply or pass on the data with the same identifier. 
 
 This could lead to issues in systems that handle data not only from the fetuses, but also from other subjects, where they expect a fixed format ( for example a National patient identifier) for the subject. These systems must be aware that a different format could be received. 
 In case of multiple fetuses each resource will have their own identification. In general the identity would be linked to the position of the fetus in the womb. However the position of the fetuses could change over time and visual interpretation is required to link the identity to the fetus.
 
 We have come across different methods of generating an identifier. These methods are mentioned here below, but the list is certainly not limited to these examples:
-* The most straightforward method is to use the same method for generating a local patient identifier. Issue of a patient identifier is usually managed in a master patient index. Usually this identifier is continued once the patient is born as the normal patient identifier. Countries that use a National patient identifier cannot  use this patient identifier for a fetus, because it has not been issued yet and need to generate a temporary identifier.
-* A second method is to add an extension to the patient identifier of the mother, for example by adding an extra digit or letter to the id. Advantage is that the relationship of the mother is obvious. However some systems expect a fixed format of an ID  and the extra digit or letter could lead to an error handling.
-* Finally some countries have a specific algorithm for generating an identifier. 
-    * The Netherlands has an algorithm to identify the pregnancy of a mother. This identifier consists of the National patient identifier and the age of the mother at the (assumed) date of conception divided by 14. Example: the date of conception is 3d October 2011, the woman (born on April 9, 1985) is 9673 days old on that date. The formula provides 691 as an identifier of this pregnancy. If the National ID of the pregnant woman is 100202020. Then the unique pregnancy identifier is 100202020-691.This identifier is of course for the pregnancy and not so much for the fetus. The fetus identifier can be derived from this identifier and in case of multiple fetuses an extra digit or letter could be added.
+* the most straightforward method is to use the same method for generating a local patient identifier. Issue of a patient identifier is usually managed in a master patient index. Usually this identifier is continued once the patient is born as the normal patient identifier. Countries that use a National patient identifier cannot use this patient identifier for a fetus, because it has not been issued yet and need to generate a temporary identifier.
+* a second method is to add an extension to the patient identifier of the mother, for example by adding an extra digit or letter to the id. Advantage is that the relationship of the mother is obvious. However some systems expect a fixed format of an ID  and the extra digit or letter could lead to an error handling.
+* finally some countries have a specific algorithm for generating an identifier. 
+    * the Netherlands has an algorithm to identify the pregnancy of a mother. This identifier consists of the National patient identifier and the age of the mother at the (assumed) date of conception divided by 14. Example: the date of conception is 3d October 2011, the woman (born on April 9, 1985) is 9673 days old on that date. The formula provides 691 as an identifier of this pregnancy. If the National ID of the pregnant woman is 100202020. Then the unique pregnancy identifier is 100202020-691.This identifier is of course for the pregnancy and not so much for the fetus. The fetus identifier can be derived from this identifier and in case of multiple fetuses an extra digit or letter could be added.
 
 ##### Relation of data with the subject
 
 As mentioned in paragraph A the data should preferably be a characteristic of the proper subject. We know that many systems do not follow this rule every time. For example the (biological) father of the fetus is often not recognized as a separate entity, but that is not the scope in this project. 
 In this implementation guide the guideline is, that data should be related to the proper entities:
-* Mother
-* Fetus or child
-* Pregnancy
+* mother
+* fetus or child
+* pregnancy
 
 The relationship between fetus and mother can be expressed in FHIR using the [RelatedPerson](https://hl7.org/fhir/relatedperson.html) resource. 
 The type of relationship is expressed in the attribute relationshiptype. Usually, the relationship type would be ‘MTH’ but more specific codes are available to address concepts like biological mother, donor mother and gestational mother. Note that a fetus will have both a RelatedPerson instance for the donor mother and a RelatedPerson instance for the gestational mother in case of egg cell donation. 
@@ -100,18 +97,18 @@ The use of a simplified FHIR patient resource extension has the advantage that m
 
 Most countries have methods of collecting data for birth and fetal death reporting. Countries do compare their vital statistics on a global level, but there is no universal guideline on how the data should be collected. This is mostly organized on the National level and healthcare institutions and care providers in a certain country are bound to these National agreements. 
 
-The Implementation Guide for the USA for birth and fetal death reporting using FHIR can be found [here](https://hl7.org/fhir/us/bfd). Other countries might have their own implementation guides on birth and mortality reporting.
+The Implementation Guide for the USA for birth and fetal death reporting using FHIR can be found [here](https://hl7.org/fhir/us/bfdr). Other countries might have their own implementation guides on birth and mortality reporting.
 
 These Implementation Guidelines for these vital statistics will be compelling for these countries. Therefore the CHOICE project does not produce specifications that might overlap in this information space and cause confusion with the birth or fetal death reporting. CHOICE does not dictate how data is stored and therefore birth and fetal death reporting should be reported as it has to be done on a National level. 
 
 #### Data categories
 When we look at the data in the pregnancy period we can distinguish the following data categories:
-* Maternal data: data collected around the (pregnant) woman (e.g. blood pressure, body weight, lab results, maternal problems, medication) and her pregnancy (e.g. parity and gravidity). The woman is the subject of this data, the focal subject could be a different entity like the pregnancy.
-* Child-specific maternal data: data collected around the (pregnant) woman, which are also related to the child. For example, a c-section is done for the delivery of the second child in a multiple pregnancy. The woman is still the subject of this c-section, but the focal subject is the child/fetus.
-* Fetus data: data collected around the unborn child/fetus (e.g. head circumference, fetal heart rate and position of the fetus). The fetus is the subject of this data.
-* Child data - data collected around the (newborn) child (e.g. birth weight and apgar score). The child is the subject of this data. Within this category there are two sub categories:
-* Child data related to the pregnancy - data around the (newborn) child which are collected as part of the pregnancy file, e.g. birthweight, apgar score
-* Other child data - data around the child which are collected during childhood which are not part of the pregnancy file/related to the pregnancy.
+* maternal data: data collected around the (pregnant) woman (e.g. blood pressure, body weight, lab results, maternal problems, medication) and her pregnancy (e.g. parity and gravidity). The woman is the subject of this data, the focal subject could be a different entity like the pregnancy.
+* child-specific maternal data: data collected around the (pregnant) woman, which are also related to the child. For example, a c-section is done for the delivery of the second child in a multiple pregnancy. The woman is still the subject of this c-section, but the focal subject is the child/fetus.
+* fetus data: data collected around the unborn child/fetus (e.g. head circumference, fetal heart rate and position of the fetus). The fetus is the subject of this data.
+* child data - data collected around the (newborn) child (e.g. birth weight and apgar score). The child is the subject of this data. Within this category there are two sub categories:
+* child data related to the pregnancy - data around the (newborn) child which are collected as part of the pregnancy file, e.g. birthweight, apgar score
+* other child data - data around the child which are collected during childhood which are not part of the pregnancy file/related to the pregnancy.
 
 The scope of this Implementation Guide is the fetus data, although for completeness the examples may also contain maternal and child-specific maternal data. Child data is out of scope of this Implementation Guide since in this case the child is born and the data will become attached to a regular FHIR Patient representing the child. After birth the fetalStatus extension will no longer be used.
 
