@@ -21,3 +21,13 @@ Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
 # We do not do anything with jurisdiction in this IG 
 Referentie naar verouderde ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
+
+# CarePlan is not the focus of this IG. It is used in use case 3 only for reasons of completeness in the mapping of the use case story
+# CarePlan mandates the the use of the intent element (minimum cardinality is 1) with this valueset (binding is required)
+# We can still remove this example from the IG if this is a problem, but prefer not to if this is not necessary
+Referentie naar experimentele CodeSystem http://hl7.org/fhir/request-intent|5.0.0
+
+# CarePlan is not the focus of this IG. It is used in use case 3 only for reasons of completeness in the mapping of the use case story
+# CarePlan mandates the the use of the intent element (minimum cardinality is 1) with this valueset (binding is required)
+# We can still remove this example from the IG if this is a problem, but prefer not to if this is not necessary
+Reference to experimental CodeSystem http://hl7.org/fhir/request-intent|5.0.0

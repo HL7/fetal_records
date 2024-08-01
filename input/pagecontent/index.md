@@ -5,7 +5,7 @@ This implementation guide aims to provide guidelines and support on the handling
 #### Contributors
 * Michael Tan (Woxingtan - project lead)
 * Mike Padula (Children Hospital of Philadelphia)
-* Liesbeth Siderius
+* Liesbeth Siderius (Youth Health Care Almere)
 * Lilian Minne (Nictiz)
 * Shovan Roy (TechIntro, Australia)
 * Sahan Damsiri Perera (University of Colombo, Sri Lanka)
@@ -19,7 +19,7 @@ This implementation guide aims to provide guidelines and support on the handling
 #### Goal
 The goals of this project include:
 * Define typical use cases where handling of data of the unborn child frequently occurs. The use cases we are specifically interested in, are the use cases where communication between IT systems are necessary and data has to be transferred from one system to the other. 
-* Provide guidance on implementation, use and handling of the relevant FHIR resources and terminology value sets
+* Provide guidance on implementation, use and handling of the relevant FHIR resources and terminology value sets.
 
 #### Considerations:
 To manage our project deliverables and timeline, we will set priorities to use cases and work out the use cases in the sequence of priority. Other use cases will remain open for future projects.
@@ -31,7 +31,7 @@ This implementation guide is meant for IT developers who develop IT systems for 
 The secondary target of this IG are the stakeholders who provide these assignments for the IT vendors to develop these  communication tools. 
 In general we can classify the stakeholders in these different groups:
 * direct healthcare providers who have direct contact with the pregnant mother:
-    * midwife, obstetrician, neonatologists, general practitioner, paediatrician, nurses and other relevant healthcare professionals
+    * midwife, obstetrician, neonatologists, general practitioner, paediatrician, nurses and other relevant healthcare professionals.
 * paramedical services, research lab technicians and nurses who perform procedures on behalf of the direct healthcare providers such as:
     * ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
 * governmental institutions who gather and perform research on data about pregnancy, birth and vital health statistics or have a public health task in screening or prevention of certain disorders.
