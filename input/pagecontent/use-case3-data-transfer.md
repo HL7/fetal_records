@@ -26,19 +26,32 @@ Carrier: pregnant woman
 
 In this use case a source provider compiles a collection of data from the mother, the fetus and the pregnancy and sends it to a receiving system. The receiving system responds to the initiator to indicate whether it can process the information or else replies that it does not understand what is being sent.  
 
-![Use case 3 roles](usecase3-roles.png "Use case 3 Data Transfer")
+<center>
+<table><tr><td><img src="usecase3-roles.png" style="width:60%; height: 60%" alt="Use case 3 Roles"/></td></tr></table>
+</center>
+
+
 
 #### FHIR
 The graphs below show the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG.
 
 The first graph represents the first visit to the MOH. Baseline examinations and testing are performed such as weight (47kg), height (147cm), Hb (12g/dl), Urine for sugar (negative)
+<center>
+<table><tr><td><img src="usecase3-firstMOHvisit.png" style="width:100%;" alt="Use case 3 Data Transfer First MOH visit"/></td></tr></table>
+</center>
 
-![Use case 3 First MOH visit](usecase3-firstMOHvisit.png "Use case 3 Data Transfer First MOH visit")
+
 
 The second graph represents an example of a follow-up visit to the MHO. Other than general wellbeing, fetal growth by examination and maternal body weight is measured.
 
-![Use case 3 Follow up MOH visit](usecase3-followupMOHvisit.png "Use case 3 Data Transfer Follow up MOH visit")
+<center>
+<table><tr><td><img src="usecase3-followupMOHvisit.png" style="width:100%;" alt="Use case 3 Data Transfer Follow up MOH visit"/></td></tr></table>
+</center>
+
 
 The third graph represents the third visit to the Obstetrician at Teaching Hospital Kandy, during which an ultrasound scan was performed. The scan revealed that the femur length (40mm) was lower than the expected range for the period of gestation, but the head circumference (318mm) was larger than expected. Besides, her general well-being and a few other parameters, including weight, were recorded and found to be within the normal range. Considering the patient's medical history and ultrasound findings, the Obstetrician planned an Elective Lower Segment Cesarean (EL/LCSC) delivery at 38 weeks of gestation.
 
-![Use case 3 Third visit Teaching Hospital Kandy](usecase3-thirdKandyvisit.png "Use case 3 Data Transfer Third visit Teaching Hospital Kandy")
+<center>
+<table><tr><td><img src="usecase3-thirdKandyvisit.png" style="width:100%;" alt="Use case 3 Data Transfer Third visit Teaching Hospital Kandy"/></td></tr></table>
+</center>
+

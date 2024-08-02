@@ -30,13 +30,20 @@ Carrier: pregnant woman
 The flow of the transactions is reversed. The procedure or order performer fulfills the requested task. This might take some time and the performer knows when it is ready to give feedback to the originator. Some systems also provide intermediate results, but this is optional. This is illustrated with a dotted line in the UML below.  The order placer usually confirms that it has received and can process the received information. 
 
 If the order placer does not comprehend the contents of the transaction, it obviously will send a message that it cannot process the information.
+<center>
+<table><tr><td><img src="usecase2-roles.png" style="width:60%; height: 60%" alt="Use case 2 roles"/></td></tr></table>
+</center>
 
-![Use case 2 roles](usecase2-roles.png "Use case 2 Result Reporting")
+
 
 ##### FHIR
 The graph below shows the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG.
 
-![Use case 1](usecase2.png "Use case 2 Result Reporting")
+<center>
+<table><tr><td><img src="usecase2.png" style="width:100%;" alt="Use case 2 Result Reporting"/></td></tr></table>
+</center>
+
+
 
 Notes: The following resources are not included in the list of examples
 * Observation 1 - Gravida
