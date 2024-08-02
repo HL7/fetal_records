@@ -15,7 +15,7 @@ What this use case addresses: Antenatal observations at specific gestational age
 * The result reporting of the ultrasound and MRI at 24 weeks for fetus A and fetus B.
 * The result reporting at birth of twin A and twin B.
 
-The task performing professionals perform the service request such as ultrasound or lab research. The results of the procedure are registered in a separate system and reported back to the requesting EHR. In this section we focus on the data that is communicated to the main EHR. This guideline should make clear what kind of data is being communicated and to which subject this data belongs.
+The task that professionals are performing a service request such as ultrasound or labresearch. The results of the procedure are registered in a separate system and reported back to the requesting EHR. In this section we focus on the data that is communicated to the main EHR. This guideline should make clear what kind of data is being communicated and to which subject this data belongs.
 The data  of the results can be categorized in 3 classes:
 * data that is clearly only about the mother
 * data that is clearly only about (one of) fetus(ses).
