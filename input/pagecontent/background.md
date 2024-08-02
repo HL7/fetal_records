@@ -61,7 +61,9 @@ However some organizations do prefer to use a unique identifier for the fetus to
 
 There are some notes to be made about appointing an identifier. This is also dependent on the way the data is stored in the medical records. As mentioned earlier 2 methods are generally used either, as a body tissue or as a pseudo patient 
 
-![Resource identification](resource-identification.png "Resource identification")
+<center>
+<table><tr><td><img src="resource-identification.png" style="width:75%; height: 75%" alt="Resource identification"/></td></tr></table>
+</center>
 
 As a guideline we recommend that data is communicated with a persistent identifier throughout the pregnancy episode and perhaps even continued after birth. It is not unusual that a mother and her fetus are being treated in different institutions in a pregnancy episode. For example the episode could start at a midwife practice, then proceed to a hospital, while data is also being processed in an ultrasound lab and perhaps later on the mother and fetus are transferred to a neonatal hospital. There are different systems involved, each with their own capability to generate or accept an identifier in a resource. 
 
@@ -117,7 +119,9 @@ Although we do not express any mandatory rules about the storage of the fetus da
 
 At a certain meeting we suggested a structure in the relationship between mother and fetus data. This was the construction.
 
-![Data linkage](data-linkage.png "Data linkage")
+<center>
+<table><tr><td><img src="data-linkage.png" style="width:75%; height: 75%" alt="Data linkage"/></td></tr></table>
+</center>
 
 This illustration suggests that the actual data of the diagnostics are attached to the mother as a patient. So the source of the data remains with the mother patient.  The fetus, whether it is a pseudo patient or a body tissue, is only referencing the data of the mother. When the child is born a real patient record is created for the child and data related to the fetus is  copied across to the new child record as well as data from the mother and pregnancy period. In case of demise before birth no child record will be created. The pseudo patient  ceases to exist, but the findings will still be available at the mother record.. 
 Our view is that it is better to focus on reuse of data rather than copying and transforming data between a mother record and a patient record. Instead a (restricted) view from the child record on the mother record could be possible, which allows access to all data from the mother record that is medically relevant for the child (as well as the other way around). Of course, this might still be a big challenge in real practice and legal frameworks should be taken into account (especially in special circumstances where the child grows up in foster care for example). But these questions should be addressed by implementers of these kinds of systems.
