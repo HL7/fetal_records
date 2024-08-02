@@ -23,12 +23,18 @@ Carrier: pregnant woman
 As mentioned before we have an order placer and an order performer.
 The order placer takes the initiative at a specific moment and the order performer reacts whenever a request has been generated.
 
-![Use case 1 roles](usecase1-roles.png "Use case 1 Medication Request")
+<center>
+<table><tr><td><img src="usecase1-roles.png" style="width:60%; height: 60%" alt="Use case 1 roles"/></td></tr></table>
+</center>
+
 
 ##### FHIR
 The graph below shows the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG.
 
-![Use case 1](usecase1.png "Use case 1 Medication Request"){:style="display:flex;flex-direction: column;"}
+<center>
+<table><tr><td><img src="usecase1.png" style="width:100%;" alt="Use case 1 Medication Request"/></td></tr></table>
+</center>
+
 
 Note: the following resources are not included in the list of examples
 * Condition 1 - Hypertension on labetolo
