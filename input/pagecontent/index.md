@@ -35,7 +35,7 @@ This implementation guide is meant for IT developers who develop IT systems for 
 The secondary target of this IG are the stakeholders who provide these assignments for the IT vendors to develop these communication tools.
 In general we can classify the stakeholders in these different groups:
 
-- direct healthcare providers who have direct contact with the pregnant mother or the mother of the (newborn) child:
+- direct healthcare providers who have direct contact with the pregnant woman or the (newborn) child:
   - midwife, obstetrician, neonatologists, general practitioner, paediatrician, nurses and other relevant healthcare professionals.
 - paramedical services, research lab technicians and nurses who perform procedures on behalf of the direct healthcare providers such as:
   - ultrasound technicians, genetic lab technicians, clinical chemistry technicians.
