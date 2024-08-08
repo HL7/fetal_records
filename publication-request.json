@@ -1,7 +1,7 @@
 {
   "package-id": "hl7.fhir.uv.ibcm",
   "version": "1.0.0-ballot2",
-  "path": "http://hl7.org/fhir/uv/ibcm/1.0.0-ballot",
+  "path": "http://hl7.org/fhir/uv/ibcm/2024Sep",
   "mode": "working",
   "status": "ballot",
   "sequence": "STU 1",
