@@ -33,7 +33,7 @@ Usage: #example
 
 Instance: uc3-practitioner2
 InstanceOf: Practitioner
-Title: "UC3 Practitioner"
+Title: "UC3 Practitioner 2"
 Description: "An example of a Practitioner"
 Usage: #example
 * name.text = "Dr. White"
