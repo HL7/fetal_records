@@ -34,23 +34,41 @@ If the order placer does not comprehend the contents of the transaction, it obvi
 <table><tr><td><img src="usecase2-roles.png" style="width:60%; height: 60%" alt="Use case 2 roles"/></td></tr></table>
 </center>
 
+<div>
+<img src="usecase2-roles.png" alt="Use case 2 Result Reporting" width="50%" height="50%" class="center">
+</div>
 
 
 ##### FHIR
-The graph below shows the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG.
+The graph below shows the mapping of this use case to FHIR. The FHIR example resources can be found in the [FHIR artifacts](artifacts.html#2) section of this IG and in the table below. Note that the example resources corresponding to this use case are prefixed with UC2.
 
-<center>
-<table><tr><td><img src="usecase2.png" style="width:100%;" alt="Use case 2 Result Reporting"/></td></tr></table>
-</center>
+<div>
+<img src="usecase2.png" alt="Use case 2 Result Reporting" width="90%" height="90%" class="center">
+</div>
 
-
+| Concept   | Resource type | Example
+| -------- | ------- |
+| 28 yo Mother  | Patient  | [UC2 Mother](Patient-uc2-mother.html)
+| Pregnancy  | Condition  | [UC2 Pregnancy](Condition-uc2-pregnancy.html)
+| Fetus A | Patient  | [UC2 Fetus A](Patient-uc2-fetusA.html)
+| Fetus B | Patient  | [UC2 Fetus B](Patient-uc2-fetusB.html)
+| Relation mother and fetus A | RelatedPerson    | [UC2 RelatedPerson Fetus A](RelatedPerson-uc2-mother-fetusA.html)
+| Relation mother and fetus B | RelatedPerson    | [UC2 RelatedPerson Fetus B](RelatedPerson-uc2-mother-fetusB.html)
+| Left congenital diaphragmatic hernia (CDH) | Condition | [UC2 Congenital Diaphragmatic Hernia Fetus A ](Condition-uc2-17190001.html)
+| Level 2 ultrasound at 20 weeks | Procedure | [UC2 UltraSound Scan Procedure 20 weeks](Procedure-uc2-ultrasoundscan20.html)
+| Level 2 ultrasound at 20 weeks | DiagnosticReport | [UC2 UltraSound Report 20 weeks](DiagnosticReport-uc2-ultrasoundreport20.html)
+| 20 weeks | Observation     |  [UC2 Gestational Age 20 weeks](Observation-uc2-gestation20.html)
+| Evaluation at 24 1/7 weeks via ultrasound | Procedure | [UC2 UltraSound Scan Procedure 24 weeks](Procedure-uc2-ultrasoundscan24.html)
+| 24 1/7 weeks | Observation     |  [UC2 Gestational Age 24 weeks](Observation-uc2-gestation24.html)
+| Lung-Head Ratio (LHR) of 0.67  via ultrasound and an observed:expected lung volume 0.21 via MRI | Observation | [UC2 Hypoplasia of Lung](Observation-uc2-hypoplasialung.html)
+| Normal karyotype - 46 XY on amniocentesis for both fetuses | Observation | [UC2 Karyotype Fetus A](Observation-uc2-karyotype-fetusA.html)
+| Normal karyotype - 46 XY on amniocentesis for both fetuses | Observation | [UC2 Karyotype Fetus B](Observation-uc2-karyotype-fetusB.html)
+| Amniocentesis  | Procedure  | [UC2 Amniocentesis Procedure](Procedure-uc2-amniocentesis.html)
+| Amniocentesis  | DiagnosticReport  | [UC2 Amniocentesis DiagnosticReport](DiagnosticReport-uc2-amniocentesisreport.html)
+| Hypospadias | Condition | [UC2 Hypospadias](Condition-uc2-416010008.html)
 
 Notes: The following resources are not included in the list of examples
 * Observation 1 - Gravida
 * Observation 2 - Para
 * Observation 3 - Dichorionic/diamnotic twin pregnancy
 * Observation 4 - Small bowel, spleen and stomach in left hemithorax
-
-Open issues/questions:
-* how to model “small bowel, spleen and stomach in left hemithorax” + relations to DiagnosticReport 1 and Condition 2
-* who is the subject of Observations lung-head ratio and obs:exp lung volume? Is this still about fetus A?
