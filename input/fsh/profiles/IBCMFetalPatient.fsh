@@ -23,7 +23,7 @@ Profile:        IBCMFetalPatient
 Parent:         Patient
 Id:             ibcm-fetal-record
 Title:          "IBCM Fetal Record Profile"
-Description:    "Profile to represent a fetal record which will be used to collect data around the unborn child/fetus (e.g. headcircumference, fetal heart rate and position of the fetus)"
+Description:    "This profile on Patient is used to represent a fetal record that must be the Resource.subject for any Condition (Disorder), Procedure, or Observation etc made about a fetus. For example, a fetal head circumferance or heart rate, the position of the fetus, congential diaphagmatic hernia or fetoscopic endoluminal tracheal occlusion (FETO) procedure."
 
 * . ^short = "Information about a fetus receiving health care services"
 * . ^definition = "Demographics and other administrative information about a fetus receiving care or other health-related services."
