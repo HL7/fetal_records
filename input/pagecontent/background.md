@@ -1,7 +1,7 @@
 ### The need of recognizing a fetus
 
 No one disputes that when a infant is born, the newborn infant can be a patient with its own unique identifier. The mother herself is also a recognizable patient, but prior to this IG  there are no consistent rules for addressing information directly pertinent to fetus prior to birth. Some systems record the data of the fetus as a body tissue of the mother. Other systems do have some form of resource that resembles a patient. 
-There exists a need to relate the data, such as specific observations (e.g. femur length) or conditions, to the fetus, because such data are characteristics of the fetus and not the mother. In cases of multples (e.g. twins or triplets) features of each fetus may need to be distinguished from each other.
+There exists a need to relate the data, such as specific observations (e.g. femur length) or conditions, to the fetus, because such data are characteristics of the fetus and not the mother. In cases of multiples (e.g. twins or triplets) features of each fetus may need to be distinguished from each other.
 
 ### Questions to answer
 
@@ -65,20 +65,18 @@ There are some notes to be made about appointing an identifier. This is also dep
 <table><tr><td><img src="resource-identification.png" style="width:75%; height: 75%" alt="Resource identification"/></td></tr></table>
 </center>
 
-As a guideline we recommend that data is communicated with a persistent identifier throughout the pregnancy episode and perhaps even continued after birth. It is not unusual that a mother and her fetus are being treated in different institutions in a pregnancy episode. For example the episode could start at a midwife practice, then proceed to a hospital, while data is also being processed in an ultrasound lab and perhaps later on the mother and fetus are transferred to a neonatal hospital. There are different systems involved, each with their own capability to generate or accept an identifier in a resource. 
+We recommend using a persistent identifier to track data throughout the pregnancy episode, potentially extending after birth. It's common for the mother and fetus to receive care in different institutions, such as starting at a midwife's office, moving to a hospital, and involving other facilities like ultrasound labs or neonatal hospitals. Each system may have its own identifier generation and acceptance process.
 
-The recommendation to keep the identifier persistent means that the identifier is generated at the start of the process when the requirement is triggered in the first system that wishes to recognize the fetus. If this system uses body tissue as the method to store the related subject, then the identifier of the body tissues is passed on as identifier in the FHIR resource of the patient with fetal status extension. If the first system uses a pseudo patient as the related subject, then the identifier would likely be generated as a patient identifier. 
+The identifier should be generated at the start, when the first system recognizes the fetus. If the system links the subject to body tissue, that identifier is passed as the patient identifier with a fetal status extension in FHIR. If a pseudo patient is used, a patient identifier is generated.
 
-All subsequent systems that handle data of the subject fetus SHALL be able to retain, reply or pass on the data with the same identifier. 
+All subsequent systems handling fetal data must retain and transfer the same identifier.
 
-This could lead to issues in systems that handle data not only from the fetuses, but also from other subjects, where they expect a fixed format ( for example a National patient identifier) for the subject. These systems must be aware that a different format could be received. 
-In case of multiple fetuses each resource will have their own identification. In general the identity would be linked to the position of the fetus in the womb. However the position of the fetuses could change over time and visual interpretation is required to link the identity to the fetus.
+Challenges arise in systems that expect a fixed format (e.g., a national patient identifier). They must accommodate a different format for the fetus, and in cases of multiple fetuses, each must have a unique identifier. Typically, identity is linked to the fetus's position in the womb, though this may change over time and require visual confirmation.
 
-We have come across different methods of generating an identifier. These methods are mentioned here below, but the list is certainly not limited to these examples:
-* the most straightforward method is to use the same method for generating a local patient identifier. Issue of a patient identifier is usually managed in a master patient index. Usually this identifier is continued once the patient is born as the normal patient identifier. Countries that use a National patient identifier cannot use this patient identifier for a fetus, because it has not been issued yet and need to generate a temporary identifier.
-* a second method is to add an extension to the patient identifier of the mother, for example by adding an extra digit or letter to the id. Advantage is that the relationship of the mother is obvious. However some systems expect a fixed format of an ID  and the extra digit or letter could lead to an error handling.
-* finally some countries have a specific algorithm for generating an identifier. 
-    * the Netherlands has an algorithm to identify the pregnancy of a mother. This identifier consists of the National patient identifier and the age of the mother at the (assumed) date of conception divided by 14. Example: the date of conception is 3d October 2011, the woman (born on April 9, 1985) is 9673 days old on that date. The formula provides 691 as an identifier of this pregnancy. If the National ID of the pregnant woman is 100202020. Then the unique pregnancy identifier is 100202020-691.This identifier is of course for the pregnancy and not so much for the fetus. The fetus identifier can be derived from this identifier and in case of multiple fetuses an extra digit or letter could be added.
+There are several methods for generating an identifier:
+- Local Patient Identifier: A straightforward approach where the fetal identifier is managed in the master patient index. In countries using a national patient identifier, a temporary ID must be used for the fetus.
+- Mother's Patient Identifier Extension: Adding a digit or letter to the mother's ID creates a link between them. However, systems expecting a fixed format may reject it.
+- Algorithm-Based Identifiers: Some countries, like the Netherlands, use a specific algorithm. For example, the pregnancy ID is derived from the national patient identifier and the mother's age at conception, with an additional digit or letter for multiple fetuses.
 
 ##### Relation of data with the subject
 
@@ -115,17 +113,23 @@ When we look at the data in the pregnancy period we can distinguish the followin
 The scope of this Implementation Guide is the fetus data, although for completeness the examples may also contain maternal and child-specific maternal data. Child data is out of scope of this Implementation Guide since in this case the child is born and the data will become attached to a regular FHIR Patient representing the child. After birth the fetalStatus extension will no longer be used.
 
 #### Thoughts about data linkage
-Although we do not express any mandatory rules about the storage of the fetus data itself, we did have several conversations about the possibilities and difficulties about this topic. There is one consideration we would like to give along and perhaps revisit in a future project.
+Although we do not express any mandatory rules about the storage of the fetus data itself, we did have several conversations about the possibilities and difficulties about this topic.
 
-At a certain meeting we suggested a structure in the relationship between mother and fetus data. This was the construction.
+There are 2 options that we would like to illustrate:
+- The fetus only refers to data that resides with the mother record.
+- The fetus contains its own data.
+
+The figure below illustrates the situation where the fetus refers to data residing with the mother:
 
 <center>
-<table><tr><td><img src="data-linkage.png" style="width:75%; height: 75%" alt="Data linkage"/></td></tr></table>
+<table><tr><td><img src="data-linkage-option1.png" style="width:75%; height: 75%" alt="Data linkage"/></td></tr></table>
 </center>
 
 This illustration suggests that the actual data of the diagnostics are attached to the mother as a patient. So the source of the data remains with the mother patient.  The fetus, whether it is a pseudo patient or a body tissue, is only referencing the data of the mother. When the child is born a real patient record is created for the child and data related to the fetus is  copied across to the new child record as well as data from the mother and pregnancy period. In case of demise before birth no child record will be created. The pseudo patient  ceases to exist, but the findings will still be available at the mother record.. 
 Our view is that it is better to focus on reuse of data rather than copying and transforming data between a mother record and a patient record. Instead a (restricted) view from the child record on the mother record could be possible, which allows access to all data from the mother record that is medically relevant for the child (as well as the other way around). Of course, this might still be a big challenge in real practice and legal frameworks should be taken into account (especially in special circumstances where the child grows up in foster care for example). But these questions should be addressed by implementers of these kinds of systems.
 
+The figure below shows the situation, where the fetus contains it’s own data: 
 
-
-
+<center>
+<table><tr><td><img src="data-linkage-option2.png" style="width:75%; height: 75%" alt="Data linkage"/></td></tr></table>
+</center>

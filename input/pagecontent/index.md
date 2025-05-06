@@ -1,6 +1,15 @@
 ### Introduction
 
-This implementation guide aims to provide guidelines and support on the handling of fetus data in FHIR. The Project ID: 932
+This guide explains how to record and exchange digital information about a fetus during pregnancy with FHIR. It is meant for use by software developers and healthcare systems. The goal is to ensure that information about a fetus is stored and shared in a consistent way, especially when this information is linked to the mother's health records.The Project ID: 932
+
+The guide includes:
+- How to represent a fetus as a separate patient within digital health systems.
+- How to link fetal records to the mother's records.
+- What kind of health information to include for the fetus, such as ultrasound results or fetal conditions.
+- Examples of how this information should be structured using international health IT standards (like HL7 FHIR).
+
+This standard helps improve care by making it easier to track and share fetal health information throughout the pregnancy, across different healthcare systems.
+
 
 #### Contributors
 
@@ -26,7 +35,7 @@ The goals of this project include:
 
 #### Considerations:
 
-To manage our project deliverables and timeline, we will set priorities to use cases and work out the use cases in the sequence of priority. Other use cases will remain open for future projects.
+To manage our project deliverables and timeline, we will set priorities to use cases and work out the use cases in the sequence of priority. Other use cases will remain open for future projects. The use cases can be found on the CHOICE Confluence pages on the HL7 Confluence site. Here is a direct link to that page : [Use Cases - Patient Care - Confluence](https://confluence.hl7.org/spaces/PC/pages/81017512/Use+Cases)
 
 #### Target audience
 
@@ -55,7 +64,7 @@ The objective of this project is to set guidelines on how we can communicate dat
 
 ##### Out of Scope
 
-As HL7 we realize that we cannot dictate mandatory rules how the fetal data should be stored in systems. Some systems store the data with the mother as subject, while others use a different subject.
+HL7 cannot dictate rules on how fetal data should be stored in systems. Some systems store the data with the mother as subject, while others use a different subject.
 
 Neither are we in the position to dictate the use of certain terminologies. There might be license issues with certain terminologies. However we will provide examples as guidance to show how certain values can be expressed.
 
@@ -79,9 +88,8 @@ The main sections of this IG are:
   familiar with before reading the remainder of the IG. There could be multiple pages for this.
 - Guidance - The Guidance pages document best practices and how to use the profiles and transactions defined in this guide for a couple of use cases.
   - [Introduction](guidance.html): This page provides an introduction of the scenario's.
-  - [Medication Request](use-case1-medication-request.html): This page provides guidance on medication requests
-  - [Result Reporting](use-case2-result-reporting.html): This page provides guidance on result reporting
-  - [Data Transfer](use-case3-data-transfer.html): This page provides guidance on data transfer
+  - [Medication Request](use-case1-medication-request.html): This page provides guidance on medication orders for a fetus
+  - [Result Reporting](use-case2-result-reporting.html): This page provides guidance on reporting observations of a fetus
+  - [Data Transfer](use-case3-data-transfer.html): This page provides guidance on communicating medical data about a fetus between two systems
 - [FHIR Artifacts](artifacts.html): Detailed descriptions and formal definitions of all FHIR artifacts defined in this guide
-- Support - The Support pages include useful links and downloads
 - [Downloads](downloads.html): Allows downloading a copy of this implementation guide and other useful information

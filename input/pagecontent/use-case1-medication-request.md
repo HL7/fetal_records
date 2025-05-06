@@ -1,10 +1,10 @@
 #### Use case 1: Medication request
 ##### Description
-A request is placed to to administer (medication) substance to a fetus. The request is processed with different possible states (of reply). These states are not relevant for the discussion about the fetus.
+This use case describes a situation where a medication order is placed to administer (medication) substance to a child immediately at birth. The child patient record does not exist yet prior to birth, but the order must be prepared and  ready at the moment of delivery. Therefore the order is placed beforehand with the fetus as the subject. Placing the order with the mother as subject would be incorrect, because the substance is not meant for her. The request is processed with different possible states (of reply). The request is processed with different possible states (of reply).
 
-Point of the discussion is how to make clear for which subject the request procedure is meant. Is the medication request meant for the mother or is it meant for the fetus? There could be more than one fetus.
+Note that after birth the fetus becomes a child and a child patient record is created. The completion of the substance administration order would be recorded against the child as a patient.
 
-The second question is if there are any restrictions in the medication administration to be performed when it is meant for a fetus. It is possible that certain resources require a real patient with an ID as the subject. This would make it impossible for the fetus to be the subject of the medication request unless we demand a change.
+A FHIR medication request resource can only refer either to a patient or a group. In our use case FHIR medication request resource is referring to the fetus using the FHIR patient with the  extension. This itself is not an issue with FHIR. However we have stated that the fetus itself might lack an identifier and certain systems can fail when placing an order with a missing identifier for the subject.  
 
 >**Postnatal intervention - d-transposition of the great arteries with intact ventricular septum**
 >
@@ -12,7 +12,7 @@ The second question is if there are any restrictions in the medication administr
 >
 >**Prostoglandin E infusion** 0.01 mg/kg/min was ordered based on a dosing weight of 3kg to be initiated just after birth following umbilical line placement. 
 
-What this use case addresses: medication ordering prior to delivery, assigning a condition to a fetus prior to birth,  assigning gestation specific observation. The issue here is how to make clear that the medication request is meant to suppress high blood pressure of the child immediately after it is born and not the mother. The child does not have a medical record yet, but the medication request has to be prepared before or during labor and administered to the child immediately after birth, The medication administration might have to be recorded. 
+What this use case addresses: medication ordering prior to delivery, assigning a condition to a fetus prior to birth,  assigning gestation specific observation. The issue here is how to make clear that the medication request is meant to suppress high blood pressure of the child immediately after it is born and not the mother.
 
 ##### Roles & systems
 Order placer: ordering care provider. The order placing system is usually an EHR from the obstetrician. 
