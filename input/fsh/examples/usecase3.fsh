@@ -72,7 +72,7 @@ Usage: #example
 * subject = Reference(uc3-mother)
  // Reference to Encounter: MOH Visit
 * encounter = Reference(uc3-encounter-firstMOHvisit)
-* code = $loinc#2106-3 "Choriogonadotropin (pregnancy test) [Presence] in Urine"
+* code = $loinc#2106-3 "Choriogonadotropin [Presence] in Urine"
 * valueString = "Positive"
 
 * performer = Reference(Practitioner/uc3-practitioner)
