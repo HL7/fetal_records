@@ -144,7 +144,7 @@ Title: "UC1 MedicationRequest Prostaglandin E Infusion"
 Description: "An example of a MedicationRequest for the fetus"
 Usage: #example
 * identifier.use = #official
-* identifier.system = "http://www.bmc.nl/portal/prescriptions"
+* identifier.system = "http://www.example.org/prescriptions"
 * identifier.value = "12345689"
 * status = #active
 * intent = #order
