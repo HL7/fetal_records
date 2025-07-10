@@ -40,10 +40,6 @@ Description:    "This profile on Patient is used to represent a fetal record tha
 
 * obeys ibcm-pat-1 and ibcm-pat-2 and ibcm-pat-3
 
-* ^extension[structuredefinition-fmm].valueInteger = 0
-* ^extension[structuredefinition-standards-status].valueCode = #draft
-* ^extension[structuredefinition-wg].valueCode = #pc
-
 * extension contains http://hl7.org/fhir/StructureDefinition/patient-fetalStatus named fetalStatus 0..1
 
 * gender and identifier.system and identifier.value and identifier and extension[fetalStatus] MS
