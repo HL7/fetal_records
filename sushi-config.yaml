@@ -23,7 +23,7 @@ extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 1
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status 
-    valueCode: trial-use
+    valueCode: active
 publisher:
   name: HL7 International / Patient Care
   url: http://www.hl7.org/Special/committees/patientcare
