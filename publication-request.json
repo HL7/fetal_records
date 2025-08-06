@@ -1,9 +1,9 @@
 {
   "package-id": "hl7.fhir.uv.ibcm",
-  "version": "1.0.0-ballot2",
-  "path": "http://hl7.org/fhir/uv/ibcm/2024Sep",
-  "mode": "working",
-  "status": "ballot",
+  "version": "1.0.0",
+  "path": "http://hl7.org/fhir/uv/ibcm/1.0.0",
+  "mode": "milestone",
+  "status": "trial-use",
   "sequence": "STU 1",
-  "desc": "This publication is the first draft of the Implementation Guide to seek for feedback from the CHOICE group"
+  "desc": "This publication is the first release of this FHIR Implementation Guide from the CHOICE group for recording and exchanging digital information about a fetus during pregnancy."
 }
