@@ -10,10 +10,13 @@
 # In our DiagnosticReport examples we need the use of specific codes which are not available in the preferred value set 'LOINC Diagnostic Report Codes'
 None of the codings provided are in the value set 'LOINC Diagnostic Report Codes' (http://hl7.org/fhir/ValueSet/report-codes|5.0.0), and a coding is recommended to come from this value set (codes = http://snomed.info/sct#241493005)
 
-# We do not do anything with jurisdiction in this IG 
+# This reference is from FHIR core - we do not do anything with jurisdiction in this IG
 Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|5.0.0
 
 # CarePlan is not the focus of this IG. It is used in use case 3 only for reasons of completeness in the mapping of the use case story
 # CarePlan mandates the the use of the intent element (minimum cardinality is 1) with this valueset (binding is required)
 # We can still remove this example from the IG if this is a problem, but prefer not to if this is not necessary
 Reference to experimental CodeSystem http://hl7.org/fhir/request-intent|5.0.0
+
+# The guide-parameter-code code system reference is from the base ImplementationGuide resource and does not appear in the IG
+%Reference to experimental CodeSystem http://hl7.org/fhir/guide-parameter-code|5.0.0
