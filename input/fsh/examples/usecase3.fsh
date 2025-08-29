@@ -17,7 +17,7 @@ Usage: #example
 * address.city = "Peradeniya"
 * address.country = "Sri Lanka"
 * contact.telecom.system = #phone
-* contact.telecom.value = "+94775588745"
+* contact.telecom.value = "+0012345678"
 
 // Reference to RelatedPerson: Mother of fetus
 * link.other = Reference(RelatedPerson/uc3-mother-fetus)

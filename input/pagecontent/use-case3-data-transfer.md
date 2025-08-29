@@ -7,7 +7,7 @@ This of course could be in the various stages of the pregnancy and that has dire
 There is more or less general consensus of what a child record should contain and in the elaboration of this use case we will explore the data categories.
 
 >Patient Information:
->Ms. MS is a 32-year-old female residing in a rural village in Sri Lanka. She was born on February 1, 1991, from a healthy couple and was diagnosed with achondroplasia based on clinical diagnosis, as she had macrocephaly and short limbs at birth. Her current address is 88 Factory Road, Peradeniya, and she can be contacted at +94771234567.
+>Ms. MS is a 32-year-old female residing in a rural village in Sri Lanka. She was born on February 1, 1991, from a healthy couple and was diagnosed with achondroplasia based on clinical diagnosis, as she had macrocephaly and short limbs at birth. Her current address is 88 Factory Road, Peradeniya, and she can be contacted at +0012345678.
 >
 >Pregnancy Details:
 >Ms. MS's pregnancy was confirmed at 8 weeks of gestation by a urine HCG test, after which she was regularly monitored at the local Medical Officer of Health office (MOH) on a monthly basis. During the first visit, baseline examinations and testing done such as weight (47kg), height (147cm), Hb (12g/dl), Urine for sugar (negative). Continued monthly follow up at MOH office MS continued the pregnancy follow up at local MOH clinic. Other than general wellbeing, fetal growth by examination and maternal body weight is measured.
